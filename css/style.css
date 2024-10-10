@@ -35,7 +35,7 @@ header .navbar-nav .nav-item .nav-link {
     }
 
     header .navbar-nav .nav-item .nav-link {
-        padding: 10px 0;/
+        padding: 10px 0;
     }
 }
 
@@ -184,7 +184,7 @@ main section h3 {
 
 .habitaciones div h2 {
     /* ver nose si esta bien*/
-    font-size: 25px;
+    font-size: 30px;
     text-align: center;
     color: rgb(70, 68, 66);
     padding-top: 30px;
@@ -192,7 +192,8 @@ main section h3 {
 }
 
 /*-------Linea divisoria titulo ----------*/
-.habitaciones div h2::before, .habitaciones div h2::after {
+.habitaciones div h2::before,
+.habitaciones div h2::after {
     content: "";
     position: absolute;
     top: 70%;
@@ -272,101 +273,112 @@ main section h3 {
     margin-top: auto;
 }
 
+@media (min-width:320px) and (max-width: 768px) {
+    .habitaciones {
+        height: auto;
+        padding: 20px;
+    }
 
+    .habitaciones .tarjetitas {
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+    }
+
+    .habitaciones .tarjetitas div {
+        width: 90%;
+        margin: 10px 0;
+    }
+}
 
 /*------------------------ GALERIA INDEX ------------------------------*/
 
 .galeria h2 {
-    text-align: center;
+    display: flex;
+    align-items: center;
+    justify-content: center;
     position: relative;
     font-size: 30px;
-    padding: 30px;
+    margin-top: 20px;
+    padding: 30px 0 40px;
     color: rgb(70, 68, 66);
 }
 
-/*-------Linea divisoria titulo ------*/
 .galeria h2::before,
 .galeria h2::after {
     content: "";
-    position: absolute;
+    flex: 1;
     top: 50%;
     width: 35%;
     height: 1px;
     background: rgb(70, 68, 66);
+    margin: 0 20px;
 }
 
 .galeria h2::before {
-    left: 15px;
+    left: 45px;
 }
 
 .galeria h2::after {
-    right: 15px;
+    right: 45px;
 }
+
 /*---------Linea divisoria titulo ----------*/
 
 .carousel-inner {
     display: flex;
-    justify-content: center;
-    align-items: center;
-}
-
-.carousel-item {
-    display: flex;
-    justify-content: center;
-    align-items: center;
+    justify-content: flex-start;
+    overflow: hidden;
+    scroll-snap-type: x mandatory;
+    padding-bottom: 15px;
+    transition: transform 0.5s ease-in-out;
 }
 
 .carousel-item img {
-    width: 100%;
+    flex: 0 0 auto;
+    width: auto;
     max-width: 250px;
     height: auto;
     object-fit: cover;
-    margin: 10px;
+    margin: 0 10px;
     border-radius: 10px;
     box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
 }
 
-/* Indicadores */
-.carousel-indicators {
-    position: absolute;
-    bottom: 10px;
-    left: 50%;
-    transform: translateX(-50%);
-    display: flex;
-    justify-content: center;
-}
-
-.carousel-indicators button {
-    background-color: #333;
-    border: none;
-}
-
-.carousel-indicators .active {
-    background-color: #ff6347;
-}
-
-/* Controles */
-.carousel-control-prev, .carousel-control-next {
+.carousel-control-prev,
+.carousel-control-next {
     width: 5%;
 }
 
-.carousel-control-prev-icon, .carousel-control-next-icon {
+.carousel-control-prev-icon,
+.carousel-control-next-icon {
     background-color: rgba(0, 0, 0, 0.5);
     border-radius: 50%;
 }
 
-/* Media query para pantallas más pequeñas */
-@media (max-width: 768px) {
-    .carousel-item {
-        flex: 1 1 48%; /* En pantallas más pequeñas, muestra dos imágenes por fila */
-        max-width: 48%;
+.carousel-inner::-webkit-scrollbar {
+    display: none;
+}
+
+@media (max-width: 1000px) {
+    .galeria h2 {
+        font-size: 28px;
+        padding: 20px;
+        
     }
 }
 
-@media (max-width: 576px) {
-    .carousel-item {
-        flex: 1 1 100%; /* En pantallas muy pequeñas, muestra una imagen por fila */
-        max-width: 100%;
+@media (max-width: 768px) {
+    .galeria h2 {
+        font-size: 24px;
+        padding: 15px;
+    }
+}
+
+@media (max-width: 480px) {
+    .galeria h2 {
+        font-size: 20px;
+        padding: 10px;
     }
 }
 
@@ -387,7 +399,6 @@ main section h3 {
 }
 
 .forma h2::before,
-/*-----------Linea divisoria titulo -------------*/
 .forma h2::after {
     content: "";
     position: absolute;
@@ -405,17 +416,18 @@ main section h3 {
     right: 15px;
 }
 
-/*--------------------------- Linea divisoria titulo ------------*/
-
 .pago {
     display: flex;
+    flex-wrap: wrap; /* Permitir que los elementos se envuelvan */
     justify-content: center;
-    gap: 300px;
+    gap: 20px; /* Reduce el espacio entre elementos */
     margin-bottom: 50px;
 }
 
 .pago div {
     text-align: center;
+    flex: 1 1 150px; /* Ajustar el tamaño de las columnas */
+    min-width: 120px; /* Ancho mínimo para responsividad */
 }
 
 .pago img {
@@ -427,6 +439,23 @@ main section h3 {
     margin-top: 10px;
     font-size: 17px;
 }
+
+/* Media Query para pantallas pequeñas */
+@media (max-width: 768px) {
+    .forma h2 {
+        font-size: 24px; /* Reducir tamaño de fuente en pantallas pequeñas */
+    }
+
+    .pago {
+        gap: 10px; /* Espacio reducido entre elementos */
+    }
+
+    .pago img {
+        width: 80px; /* Reducir tamaño de las imágenes */
+    }
+}
+
+
 
 /*------- -------------------- FOOTER INDEX ----------------------------------*/
 
@@ -596,7 +625,8 @@ form textarea {
 }
 
 .habitacion .info {
-    grid-column: 2 / 4; /* dos columnas de la descripción y comodidades */
+    grid-column: 2 / 4;
+    /* dos columnas de la descripción y comodidades */
     display: flex;
     flex-direction: column;
     gap: 10px;
@@ -622,7 +652,7 @@ form textarea {
     padding: 0;
     margin-left: 70px;
     text-align: justify;
-    font-size: 13px;
+    font-size: 14px;
 }
 
 /* ------------------------------- PAGE SERVICIOS -------------------------------- */
@@ -630,18 +660,19 @@ form textarea {
 .servicios {
     display: grid;
     grid-template-columns: 1fr 1fr;
-    gap: 60px;
+    gap: 80px;
     padding: 60px;
     align-items: start;
     /* lo alinea en la parte superior */
 }
 
 .servicios img {
-    width: 100%;
-    height: 525px;
+    width: 80%;
+    height: 500px;
     border-radius: 10px;
     border: 2px solid #ccc;
     box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+
 }
 
 .servicios .lista {
@@ -650,19 +681,22 @@ form textarea {
     border-radius: 10px;
     border: 1px solid #ccc;
     box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+    font-size: 15px;
+
 }
 
 .servicios .lista h2 {
-    grid-column: span 2;  /* titulo en dos columnas */
-    font-size: 35px;
+    grid-column: span 2;
+    /* titulo en dos columnas */
+    font-size: 30px;
     color: rgb(70, 68, 66);
     text-align: center;
-    padding-bottom: 50px;
-    margin-top: 10px;
+    padding-bottom: 10px;
+    margin-top: 5px;
 }
 
 .servicios .lista ul {
     list-style: disc;
     text-align: justify;
-    padding: 20px;
+    padding: 10px;
 }

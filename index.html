@@ -20,12 +20,13 @@
                 </div>
                 <div class="col-12 col-md-9">
                     <nav class="navbar navbar-expand-md navbar-light p-0">
-                        <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarNav"
-                            aria-controls="navbarNav" aria-expanded="false" aria-label="Toggle navigation">
+                        <button class="navbar-toggler" type="button" data-bs-toggle="collapse"
+                            data-bs-target="#navbarNav" aria-controls="navbarNav" aria-expanded="false"
+                            aria-label="Toggle navigation">
                             <span class="navbar-toggler-icon"></span>
                         </button>
                         <div class="collapse navbar-collapse" id="navbarNav">
-                            <ul class="navbar-nav ml-auto">
+                            <ul class="navbar-nav ms-auto">
                                 <li class="nav-item"><a href="./index.html" class="nav-link">Inicio</a></li>
                                 <li class="nav-item"><a href="./pages/habitaciones.html"
                                         class="nav-link">Habitaciones</a></li>
@@ -131,36 +132,73 @@
         </section>
         <section class="galeria">
             <h2>Galería de Imágenes</h2>
-            <div id="imageCarousel" class="carousel slide" data-bs-ride="carousel">
+            <div id="imageCarousel" class="carousel">
                 <div class="carousel-inner">
                     <div class="carousel-item active">
-                        <div class="d-flex">
-                            <img src="./img/comedor.png" class="d-block w-25" alt="Imagen 1">
-                            <img src="./img/desayuno.png" class="d-block w-25" alt="Imagen 2">
-                            <img src="./img/parque-estacionmiento.png" class="d-block w-25" alt="Imagen 3">
-                            <img src="./img/parque.png" class="d-block w-25" alt="Imagen 4">
-                        </div>
-                    </div>
-                    <div class="carousel-item">
-                        <div class="d-flex">
-                            <img src="./img/pileta.png" class="d-block w-25" alt="Imagen 5">
-                            <img src="./img/parque2.png" class="d-block w-25" alt="Imagen 6">
-                            <img src="./img/pileta1.png" class="d-block w-25" alt="Imagen 7">
-                            <img src="./img/comedor.png" class="d-block w-25" alt="Imagen 8">
+                        <div class="d-flex justify-content-start">
+                            <img src="./img/comedor.png" class="d-block" alt="Imagen 1">
+                            <img src="./img/desayuno.png" class="d-block" alt="Imagen 2">
+                            <img src="./img/parque-estacionmiento.png" class="d-block" alt="Imagen 3">
+                            <img src="./img/parque.png" class="d-block" alt="Imagen 4">
+                            <img src="./img/pileta.png" class="d-block" alt="Imagen 5">
+                            <img src="./img/parque2.png" class="d-block" alt="Imagen 6">
+                            <img src="./img/pileta1.png" class="d-block" alt="Imagen 7">
+                            <img src="./img/comedor.png" class="d-block" alt="Imagen 8">
                         </div>
                     </div>
                 </div>
-                <button class="carousel-control-prev" type="button" data-bs-target="#imageCarousel"
-                    data-bs-slide="prev">
+                <button class="carousel-control-prev" type="button">
                     <span class="carousel-control-prev-icon" aria-hidden="true"></span>
                     <span class="visually-hidden">Anterior</span>
                 </button>
-                <button class="carousel-control-next" type="button" data-bs-target="#imageCarousel"
-                    data-bs-slide="next">
+                <button class="carousel-control-next" type="button">
                     <span class="carousel-control-next-icon" aria-hidden="true"></span>
                     <span class="visually-hidden">Siguiente</span>
                 </button>
             </div>
+            <script>
+                document.addEventListener('DOMContentLoaded', function () {
+                    const carouselInner = document.querySelector('.carousel-inner .d-flex');
+                    const prevButton = document.querySelector('.carousel-control-prev');
+                    const nextButton = document.querySelector('.carousel-control-next');
+                    const totalImages = document.querySelectorAll('.carousel-item img').length;
+                    const imgWidth = document.querySelector('.carousel-item img').offsetWidth + 20; // Ancho de imagen más margen
+                    let currentPosition = 0;
+
+                    // Función para desplazar las imágenes con transform
+                    function moveCarousel(position) {
+                        carouselInner.style.transform = `translateX(-${position}px)`;
+                    }
+
+                    prevButton.addEventListener('click', () => {
+                        if (currentPosition > 0) {
+                            currentPosition -= imgWidth;
+                        } else {
+                            currentPosition = (totalImages - 1) * imgWidth; // Vuelve al final
+                        }
+                        moveCarousel(currentPosition);
+                    });
+
+                    nextButton.addEventListener('click', () => {
+                        if (currentPosition < (totalImages - 1) * imgWidth) {
+                            currentPosition += imgWidth;
+                        } else {
+                            currentPosition = 0;
+                        }
+                        moveCarousel(currentPosition);
+                    });
+
+                    setInterval(() => {
+                        if (currentPosition < (totalImages - 1) * imgWidth) {
+                            currentPosition += imgWidth;
+                        } else {
+                            currentPosition = 0;
+                        }
+                        moveCarousel(currentPosition);
+                    }, 3000);
+                });
+            </script>
+
         </section>
         <section>
             <div class="forma">
@@ -187,7 +225,7 @@
         </div>
     </main>
     <footer><!--footer id=pie de pagina-->
-        <div class="iconohotel">
+        <div class="icono">
             <img src="./img/logo-hotel-footer.png" alt="icono hotel">
         </div>
         <div class="contacto">
@@ -211,9 +249,8 @@
                     src="./img/email.png" alt="icono mail"></a>
         </div>
     </footer>
-    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/js/bootstrap.bundle.min.js"
-        integrity="sha384-YvpcrYf0tY3lHB60NNkmXc5s9fDVZLESaAA55NDzOxhy9GkcIdslK1eN7N6jIeHz"
-        crossorigin="anonymous"></script>
+    <script src="https://cdn.jsdelivr.net/npm/@popperjs/core@2.11.6/dist/umd/popper.min.js"></script>
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/js/bootstrap.min.js"></script>
 </body>
 
 </html>
