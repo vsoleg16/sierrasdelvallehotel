@@ -1,0 +1,668 @@
+* {
+    padding: 0;
+    margin: 0;
+    box-sizing: border-box;
+    font-family: Helvetica;
+}
+
+a {
+    text-decoration: none;
+}
+
+/*--------------------------- HEADER INDEX ------------------------------*/
+header img {
+    max-height: 60px;
+}
+
+header .navbar-nav .nav-item .nav-link {
+    font-family: Arial, Helvetica, sans-serif;
+    color: rgb(70, 68, 66);
+    font-size: 17px;
+}
+
+@media (max-width: 768px) {
+    header .navbar-collapse {
+        text-align: center;
+    }
+
+    header .navbar-nav {
+        flex-direction: column;
+    }
+
+    header .navbar-nav .nav-item {
+        margin-bottom: 10px;
+        width: 100%;
+    }
+
+    header .navbar-nav .nav-item .nav-link {
+        padding: 10px 0;/
+    }
+}
+
+/*------------------------------- WHATS APP INDEX -------------------------------------- */
+
+.fixed {
+    position: fixed;
+    bottom: 50px;
+    right: 60px;
+    width: 10px;
+    height: 20px;
+}
+
+/*---------------------------------- HERO INDEX ----------------------------------------*/
+
+.hero {
+    height: 60vh;
+    background-image: url(../img/Fondo-Header.jpg);
+    background-size: cover;
+    background-position: center;
+    width: 100%;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+.hero h1 {
+    color: white;
+    font-size: 48px;
+    font-weight: normal;
+    text-align: center;
+    text-shadow: 2px 2px 5px rgba(0, 0, 0, 0.7);
+}
+
+main section h1 {
+    height: 40px;
+    color: white;
+    text-align: center;
+}
+
+main section h3 {
+    height: 30px;
+    color: rgb(141, 110, 89);
+}
+
+
+@media (min-width: 320px) and (max-width: 768px) {
+    .hero {
+        height: 40vh;
+    }
+
+    .hero h1 {
+        font-size: 24px;
+    }
+
+    main section h1 {
+        height: auto;
+        font-size: 24px;
+    }
+
+    main section h3 {
+        height: auto;
+        font-size: 18px;
+    }
+}
+
+/*----------------- DESCRIPCION INDEX -----------------------*/
+
+.descripcion {
+    display: flex;
+    justify-content: space-evenly;
+    align-items: center;
+    padding: 15px;
+    flex-wrap: wrap;
+}
+
+.descripcion div {
+    width: 50%;
+    text-align: center;
+}
+
+.descripcion img {
+    width: 100%;
+    max-width: 600px;
+    height: auto;
+    margin: 40px auto 5px;
+    /*flexbox
+    display: flex;
+    justify-content: center;*/
+}
+
+.descripcion div h2 {
+    font-size: 45px;
+    font-weight: lighter;
+    color: sienna;
+    text-align: center;
+    margin-bottom: 20px;
+}
+
+.descripcion div p {
+    font-size: 16px;
+    text-align: center;
+    color: rgb(70, 68, 66);
+    text-align: center;
+    /*flexbox*/
+    display: flex;
+    justify-content: center;
+    margin-top: 20px;
+    margin-right: 30px;
+}
+
+@media (min-width:320px) and (max-width: 768px) {
+    .descripcion {
+        flex-direction: column;
+        align-items: center;
+    }
+
+    .descripcion div {
+        width: 100%;
+        text-align: center;
+    }
+
+    .descripcion img {
+        margin: 0 auto 20px;
+        width: 100%;
+        height: auto;
+    }
+
+    .descripcion div h2 {
+        font-size: 30px;
+        margin-bottom: 10px;
+    }
+
+    .descripcion div p {
+        font-size: 14px;
+    }
+}
+
+/*--------------------------- HABITACIONES INDEX ------------------------------*/
+
+.habitaciones {
+    background-color: rgb(243, 232, 218);
+    height: 600px;
+    margin-top: 35px;
+}
+
+.habitaciones div h2 {
+    /* ver nose si esta bien*/
+    font-size: 25px;
+    text-align: center;
+    color: rgb(70, 68, 66);
+    padding-top: 30px;
+    position: relative;
+}
+
+/*-------Linea divisoria titulo ----------*/
+.habitaciones div h2::before, .habitaciones div h2::after {
+    content: "";
+    position: absolute;
+    top: 70%;
+    width: 40%;
+    height: 1px;
+    background: rgb(70, 68, 66);
+}
+
+.habitaciones div h2::before {
+    left: 15px;
+}
+
+.habitaciones div h2::after {
+    right: 15px;
+}
+
+/*------------Linea divisoria titulo -------------*/
+
+.habitaciones .tarjetitas {
+    display: flex;
+    flex-direction: row;
+    justify-content: space-around;
+    align-items: center;
+}
+
+.habitaciones .tarjetitas div {
+    background-color: white;
+    border: 3px solid gray;
+    width: 300px;
+    height: 450px;
+    margin: 30px;
+    /*flexbox*/
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+    padding: 4px;
+    box-sizing: border-box;
+    /* padding y border no se suman*/
+}
+
+.habitaciones .tarjetitas div img {
+    width: 100%;
+    height: auto;
+}
+
+.habitaciones .tarjetitas h3 {
+    font-size: 20px;
+    color: rgb(214, 160, 105);
+    /* COLOR DE BOTON*/
+    margin: 10px 0;
+    text-align: center;
+}
+
+.habitaciones .tarjetitas div p {
+    font-family: Arial, Helvetica, sans-serif;
+    font-size: 15px;
+    text-align: center;
+    margin: 10px 0;
+    overflow: hidden;
+    /* ACOMODAR PARRAFO EN CARD*/
+    display: -webkit-box;
+    -webkit-line-clamp: 4;
+    -webkit-box-orient: vertical;
+    line-clamp: 4;
+}
+
+.habitaciones .tarjetitas div a {
+    background-color: rgb(230, 204, 182);
+    color: white;
+    font-size: 20px;
+    border: none;
+    cursor: pointer;
+    /*manito*/
+    padding: 10px;
+    text-align: center;
+    text-decoration: none;
+    margin-top: auto;
+}
+
+
+
+/*------------------------ GALERIA INDEX ------------------------------*/
+
+.galeria h2 {
+    text-align: center;
+    position: relative;
+    font-size: 30px;
+    padding: 30px;
+    color: rgb(70, 68, 66);
+}
+
+/*-------Linea divisoria titulo ------*/
+.galeria h2::before,
+.galeria h2::after {
+    content: "";
+    position: absolute;
+    top: 50%;
+    width: 35%;
+    height: 1px;
+    background: rgb(70, 68, 66);
+}
+
+.galeria h2::before {
+    left: 15px;
+}
+
+.galeria h2::after {
+    right: 15px;
+}
+/*---------Linea divisoria titulo ----------*/
+
+.carousel-inner {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+.carousel-item {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+.carousel-item img {
+    width: 100%;
+    max-width: 250px;
+    height: auto;
+    object-fit: cover;
+    margin: 10px;
+    border-radius: 10px;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
+}
+
+/* Indicadores */
+.carousel-indicators {
+    position: absolute;
+    bottom: 10px;
+    left: 50%;
+    transform: translateX(-50%);
+    display: flex;
+    justify-content: center;
+}
+
+.carousel-indicators button {
+    background-color: #333;
+    border: none;
+}
+
+.carousel-indicators .active {
+    background-color: #ff6347;
+}
+
+/* Controles */
+.carousel-control-prev, .carousel-control-next {
+    width: 5%;
+}
+
+.carousel-control-prev-icon, .carousel-control-next-icon {
+    background-color: rgba(0, 0, 0, 0.5);
+    border-radius: 50%;
+}
+
+/* Media query para pantallas más pequeñas */
+@media (max-width: 768px) {
+    .carousel-item {
+        flex: 1 1 48%; /* En pantallas más pequeñas, muestra dos imágenes por fila */
+        max-width: 48%;
+    }
+}
+
+@media (max-width: 576px) {
+    .carousel-item {
+        flex: 1 1 100%; /* En pantallas muy pequeñas, muestra una imagen por fila */
+        max-width: 100%;
+    }
+}
+
+/*-----------------FORMAS DE PAGO -----------------*/
+
+.forma {
+    text-align: center;
+    padding: 20px;
+}
+
+.forma h2 {
+    position: relative;
+    text-align: center;
+    font-size: 30px;
+    color: rgb(70, 68, 66);
+    margin-top: 30px;
+    margin-bottom: 40px;
+}
+
+.forma h2::before,
+/*-----------Linea divisoria titulo -------------*/
+.forma h2::after {
+    content: "";
+    position: absolute;
+    top: 40%;
+    width: 35%;
+    height: 1px;
+    background: rgb(70, 68, 66);
+}
+
+.forma h2::before {
+    left: 15px;
+}
+
+.forma h2::after {
+    right: 15px;
+}
+
+/*--------------------------- Linea divisoria titulo ------------*/
+
+.pago {
+    display: flex;
+    justify-content: center;
+    gap: 300px;
+    margin-bottom: 50px;
+}
+
+.pago div {
+    text-align: center;
+}
+
+.pago img {
+    width: 100px;
+    height: auto;
+}
+
+.pago p {
+    margin-top: 10px;
+    font-size: 17px;
+}
+
+/*------- -------------------- FOOTER INDEX ----------------------------------*/
+
+footer {
+    background-color: rgb(211, 197, 182);
+    background-size: cover;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    flex-wrap: wrap;
+    padding: 30px;
+    height: auto;
+}
+
+footer div {
+    text-align: center;
+    margin-bottom: 20px;
+}
+
+footer img {
+    max-height: 150px;
+    margin: 0 auto;
+}
+
+.contacto p {
+    font-size: 15px;
+    text-align: center;
+    margin: 0;
+    padding: 0;
+    line-height: 1, 1;
+    /* ajuste de la altura de línea */
+}
+
+@media (max-width: 768px) {
+    footer {
+        flex-direction: column;
+        height: auto;
+        padding: 20px;
+    }
+
+    footer div {
+        margin-bottom: 20px;
+        width: 100%;
+    }
+
+    footer img {
+        margin: 0 auto;
+    }
+}
+
+/*---------------------------- PAGE ACTIVIDADES -----------------------------------*/
+
+/*---------------------------- PAGE CONTACTO --------------------------------------*/
+
+.comunicate {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    gap: 40px;
+    padding: 60px;
+    align-items: start;
+}
+
+.comunicate img {
+    width: 100%;
+    height: 530px;
+    border-radius: 10px;
+    border: 2px solid #ccc;
+    box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+}
+
+.formulario {
+    background-color: #f3e8da;
+    padding: 30px;
+    border-radius: 10px;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    height: 525px;
+    border: 1px solid #ccc;
+    box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+}
+
+.formulario h2 {
+    font-size: 25px;
+    text-align: center;
+    margin-bottom: 20px;
+}
+
+form {
+    display: flex;
+    flex-direction: column;
+    gap: 5px;
+    width: 100%;
+    justify-content: center;
+    flex-grow: 1;
+}
+
+form div {
+    display: flex;
+    flex-direction: column;
+    gap: 5px;
+}
+
+form label {
+    margin-bottom: 3px;
+}
+
+form input,
+form textarea {
+    padding: 5px;
+    font-size: 15px;
+    width: 100%;
+    box-sizing: border-box;
+    /*padding y border dentro del width */
+}
+
+.form-buttons {
+    display: flex;
+    justify-content: space-between;
+    margin: 10px;
+}
+
+@media (max-width: 768px) {
+    .comunicate {
+        grid-template-columns: 1fr;
+        gap: 20px;
+    }
+
+    .comunicate img {
+        height: auto;
+    }
+
+    .formulario {
+        height: auto;
+    }
+}
+
+/*---------------------------- PAGE HABITACIONES ---------------------------------*/
+
+.habitaciones-pagina h2 {
+    font-size: 35px;
+    color: rgb(70, 68, 66);
+    text-align: center;
+    margin-top: 30px;
+    margin-bottom: 20px;
+}
+
+.habitaciones-pagina .arboles {
+    display: grid;
+    grid-template-columns: 1fr;
+    gap: 20px;
+}
+
+.habitacion {
+    display: grid;
+    grid-template-columns: 1fr 2fr 1fr;
+    gap: 20px;
+    background-color: #f3e8da;
+    padding: 20px;
+    border: 1px solid #ccc;
+    align-items: center;
+}
+
+.habitacion img {
+    width: 100%;
+    height: auto;
+}
+
+.habitacion .info {
+    grid-column: 2 / 4; /* dos columnas de la descripción y comodidades */
+    display: flex;
+    flex-direction: column;
+    gap: 10px;
+}
+
+.habitacion h3 {
+    text-align: center;
+    margin: 0;
+    margin-bottom: 10px;
+}
+
+.informacion {
+    padding: 20px;
+    text-align: center;
+}
+
+.informacion p {
+    font-size: 15px;
+}
+
+.comodidades ul {
+    list-style-type: none;
+    padding: 0;
+    margin-left: 70px;
+    text-align: justify;
+    font-size: 13px;
+}
+
+/* ------------------------------- PAGE SERVICIOS -------------------------------- */
+
+.servicios {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    gap: 60px;
+    padding: 60px;
+    align-items: start;
+    /* lo alinea en la parte superior */
+}
+
+.servicios img {
+    width: 100%;
+    height: 525px;
+    border-radius: 10px;
+    border: 2px solid #ccc;
+    box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+}
+
+.servicios .lista {
+    background-color: #f3e8da;
+    padding: 30px;
+    border-radius: 10px;
+    border: 1px solid #ccc;
+    box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+}
+
+.servicios .lista h2 {
+    grid-column: span 2;  /* titulo en dos columnas */
+    font-size: 35px;
+    color: rgb(70, 68, 66);
+    text-align: center;
+    padding-bottom: 50px;
+    margin-top: 10px;
+}
+
+.servicios .lista ul {
+    list-style: disc;
+    text-align: justify;
+    padding: 20px;
+}
