@@ -402,7 +402,6 @@ main section h3 {
 .forma h2::after {
     content: "";
     position: absolute;
-    top: 40%;
     width: 35%;
     height: 1px;
     background: rgb(70, 68, 66);
@@ -410,24 +409,26 @@ main section h3 {
 
 .forma h2::before {
     left: 15px;
+    top: 50%; /* Ajustar la posición vertical */
 }
 
 .forma h2::after {
     right: 15px;
+    top: 50%; /* Ajustar la posición vertical */
 }
 
 .pago {
     display: flex;
-    flex-wrap: wrap; /* Permitir que los elementos se envuelvan */
+    flex-wrap: wrap; 
     justify-content: center;
-    gap: 20px; /* Reduce el espacio entre elementos */
+    gap: 20px; 
     margin-bottom: 50px;
 }
 
 .pago div {
     text-align: center;
-    flex: 1 1 150px; /* Ajustar el tamaño de las columnas */
-    min-width: 120px; /* Ancho mínimo para responsividad */
+    flex: 1 1 150px; 
+    min-width: 120px; 
 }
 
 .pago img {
@@ -443,18 +444,23 @@ main section h3 {
 /* Media Query para pantallas pequeñas */
 @media (max-width: 768px) {
     .forma h2 {
-        font-size: 24px; /* Reducir tamaño de fuente en pantallas pequeñas */
+        font-size: 20px; 
+        margin-bottom: 30px; /* Ajustar margen inferior */
+    }
+
+    .forma h2::before,
+    .forma h2::after {
+        top: 60%; /* Ajustar la posición vertical del subrayado */
     }
 
     .pago {
-        gap: 10px; /* Espacio reducido entre elementos */
+        gap: 10px; 
     }
 
     .pago img {
-        width: 80px; /* Reducir tamaño de las imágenes */
+        width: 80px; 
     }
 }
-
 
 
 /*------- -------------------- FOOTER INDEX ----------------------------------*/
