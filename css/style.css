@@ -191,30 +191,10 @@ main section h3 {
     font-size: 30px;
     text-align: center;
     color: rgb(70, 68, 66);
-    padding-top: 30px;
+    padding-top: 25px;
+    padding-bottom: 5px ;
     position: relative;
 }
-
-/*-------Linea divisoria titulo ----------*/
-.habitaciones div h2::before,
-.habitaciones div h2::after {
-    content: "";
-    position: absolute;
-    top: 70%;
-    width: 40%;
-    height: 1px;
-    background: rgb(70, 68, 66);
-}
-
-.habitaciones div h2::before {
-    left: 15px;
-}
-
-.habitaciones div h2::after {
-    right: 15px;
-}
-
-/*------------Linea divisoria titulo -------------*/
 
 .habitaciones .tarjetitas {
     display: flex;
@@ -277,22 +257,62 @@ main section h3 {
     margin-top: auto;
 }
 
-@media (min-width:320px) and (max-width: 768px) {
+@media (max-width:1028px){
+    .habitaciones{
+        height: auto;
+        margin: 10px;
+        padding: 10px;
+    }
+    .habitaciones h2{
+        font-size: 26px;
+        text-align: center;
+    }
+
+    .habitaciones .tarjetitas {
+        display: grid;
+        grid-template-columns: 1fr 1fr;
+        gap: 15px;
+        justify-items: center;
+        padding: 30px;
+}
+}   
+
+@media (max-width: 768px){
+    .habitaciones{
+        height: auto;
+        margin: 10px;
+    }
+    .habitaciones h2{
+        font-size: 24px;
+        text-align: center;
+    }
+
+    .habitaciones .tarjetitas {
+        display: grid;
+        grid-template-columns: 1fr 1fr;
+        gap: 10px;
+        justify-content: center;
+        padding-left: 25px;
+    }    
+}
+
+@media (min-width:320px) and (max-width: 480px) {
     .habitaciones {
         height: auto;
         padding: 20px;
     }
 
-    .habitaciones .tarjetitas {
-        display: flex;
-        flex-direction: column;
-        align-items: center;
+    .habitaciones h2 {
+        font-size: 20px;
+        padding: 10px;
     }
 
-    .habitaciones .tarjetitas div {
-        width: 90%;
-        margin: 10px 0;
-    }
+    .habitaciones .tarjetitas {
+        display: grid;
+        grid-template-columns: 1fr;
+        gap:10px;
+        justify-content: center;
+    }    
 }
 
 /*------------------------ GALERIA INDEX ------------------------------*/
@@ -307,29 +327,6 @@ main section h3 {
     padding: 20px;
     color: rgb(70, 68, 66);
 }
-
-.galeria h2::before,
-.galeria h2::after {
-    content: "";
-    flex: 1;
-    top: 50%;
-    width: 35%;
-    height: 1px;
-    background: rgb(70, 68, 66);
-    margin: 0 20px;
-}
-
-.galeria h2::before {
-    margin: 20px;
-    left: 20px;
-}
-
-.galeria h2::after {
-    margin: 20px;
-    right: 20px;
-}
-
-/*---------Linea divisoria titulo ----------*/
 
 .carousel-inner {
     display: flex;
@@ -366,24 +363,20 @@ main section h3 {
     display: none;
 }
 
-@media (max-width: 1000px) {
+
+@media (max-width: 768px){
     .galeria h2 {
-        font-size: 28px;
+        font-size: 25px;
         padding: 20px;
+        text-align: center;
     }
 }
 
-@media (max-width: 768px) {
-    .galeria h2 {
-        font-size: 24px;
-        padding: 15px;
-    }
-}
-
-@media (max-width: 480px) {
+@media (min-width: 320px) and (max-width:480px){
     .galeria h2 {
         font-size: 20px;
         padding: 10px;
+        text-align: center;
     }
 }
 
@@ -399,27 +392,9 @@ main section h3 {
     text-align: center;
     font-size: 30px;
     color: rgb(70, 68, 66);
+    text-align: center;
     margin-top: 30px;
     margin-bottom: 40px;
-}
-
-.forma h2::before,
-.forma h2::after {
-    content: "";
-    position: absolute;
-    width: 35%;
-    height: 1px;
-    background: rgb(70, 68, 66);
-}
-
-.forma h2::before {
-    left: 20px;
-    top: 50%;
-}
-
-.forma h2::after {
-    right: 20px;
-    top: 50%;
 }
 
 .pago {
@@ -445,18 +420,15 @@ main section h3 {
 }
 
 
-@media (max-width: 768px) {
+@media (max-width: 768px){
 .forma h2 {
-    font-size: 20px;
+    font-size: 25px;
     margin-bottom: 30px;
 }
 
-.forma h2::before,
-.forma h2::after {
-    top: 70%;
-}
-
 .pago {
+    display: grid;
+    grid-template-columns: 1fr;
     gap: 10px;
 }
 
@@ -465,39 +437,23 @@ main section h3 {
 }
 }
 
-@media (max-width:320px) {
+@media (min-width: 320px) and (max-width:480px){
 .forma h2 {
     font-size: 18px;
-    margin-bottom: 20px;
     position: relative;
+    display: flex;
+    flex-direction: column;
 }
-
-.forma h2::before,
-.forma h2::after {
-    content: "";
-    position: absolute;
-    width: 40px;
-    height: 2px;
-    top: 50%;
-}
-
-.forma h2::before {
-    left: -50px;
-}
-
-.forma h2::after {
-    right: -50px;
-}
-
 .pago {
-    gap: 10px;
+    display: grid;
+    grid-template-columns: 1fr;
+    gap: 5%;
 }
 
 .pago img {
     width: 80px;
 }
 }
-
 
     /*------- -------------------- FOOTER INDEX ----------------------------------*/
 
@@ -715,14 +671,14 @@ form textarea {
 .servicios .lista {
     background-color: #f3e8da;
     padding: 30px;
-    height: 530px;
+    min-height: 530px;
     border-radius: 10px;
     border: 1px solid #ccc;
     box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
     font-size: 15px;
     display: flex;
     flex-direction: column;
-    overflow: hidden;
+    overflow: auto;
 }
 
 .servicios .lista h2 {
@@ -750,16 +706,22 @@ form textarea {
 
     .lista h2 {
     height: auto;
-    font-size: 14px;
+    font-size: 24px;
     padding: 20px;
 }
+      
+    .servicios .lista{
+        max-height: auto;
+        display: flex;
+        flex-direction: column;
+    } 
 }
 @media (max-width: 320px){
     .servicios .lista {
     padding: 15px;
     }
     .servicios .lista h2 {
-    font-size: 24px;
+    font-size: 18px;
     }
     .servicios .lista ul {
     padding: 15px;
