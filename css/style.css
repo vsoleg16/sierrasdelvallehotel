@@ -661,7 +661,7 @@ form textarea {
 }
 
 .comodidades ul {
-    list-style-type: none;
+    list-style-type:circle;
     padding: 0;
     margin-left: 70px;
     text-align: justify;
@@ -703,9 +703,18 @@ form textarea {
     }
 }
 
-@media (max-width: 480px) {
+@media (min-width: 320px) and (max-width: 480px) {
+    .habitacion {
+        grid-template-columns: 1fr;
+        grid-template-rows: auto;
+    }
+
     .habitaciones-pagina h2 {
         font-size: 24px;
+    }
+
+    .habitaciones-pagina .arboles {
+        grid-template-columns: 1fr;
     }
 
     .informacion p {
