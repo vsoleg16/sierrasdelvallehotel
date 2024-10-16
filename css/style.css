@@ -59,7 +59,7 @@ header .navbar-nav .nav-item .nav-link {
 /*---------------------------------- HERO INDEX ----------------------------------------*/
 
 .hero {
-    height: 60vh;
+    height: 40vh;
     background-image: url(../img/Fondo-Header.jpg);
     background-size: cover;
     background-position: center;
@@ -91,7 +91,7 @@ main section h3 {
 
 @media (min-width: 320px) and (max-width: 768px) {
     .hero {
-        height: 40vh;
+        height: 20vh;
     }
 
     .hero h1 {
@@ -296,10 +296,10 @@ main section h3 {
     }    
 }
 
-@media (min-width:320px) and (max-width: 480px) {
+@media (max-width: 480px) {
     .habitaciones {
         height: auto;
-        padding: 20px;
+        padding: 10px;
     }
 
     .habitaciones h2 {
@@ -311,6 +311,20 @@ main section h3 {
         display: grid;
         grid-template-columns: 1fr;
         gap:10px;
+        justify-content: center;
+    }    
+}
+
+@media (max-width: 320px) {
+    
+    .habitaciones h2 {
+        font-size: 20px;
+    }
+
+    .habitaciones .tarjetitas {
+        display: grid;
+        grid-template-columns: 1fr;
+        gap: 10px;
         justify-content: center;
     }    
 }
