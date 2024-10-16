@@ -296,7 +296,7 @@ main section h3 {
     }    
 }
 
-@media (max-width: 480px) {
+@media (min-width: 480px) and (max-width: 768px){
     .habitaciones {
         height: auto;
         padding: 10px;
@@ -304,7 +304,7 @@ main section h3 {
 
     .habitaciones h2 {
         font-size: 20px;
-        padding: 10px;
+        text-align: center;
     }
 
     .habitaciones .tarjetitas {
@@ -315,7 +315,11 @@ main section h3 {
     }    
 }
 
-@media (max-width: 320px) {
+@media (min-width: 320px) and (max-width: 480px){
+    .habitaciones {
+        height: auto;
+        padding: 10px;
+    }    
     
     .habitaciones h2 {
         font-size: 20px;
@@ -615,7 +619,7 @@ form textarea {
 
 .habitaciones-pagina .arboles {
     display: grid;
-    grid-template-columns: 1fr;
+    /*grid-template-columns: 1fr;*/
     gap: 20px;
 }
 
@@ -662,6 +666,56 @@ form textarea {
     margin-left: 70px;
     text-align: justify;
     font-size: 14px;
+}
+
+@media (min-width:768px) and (max-width: 1028px) {
+    .habitacion {
+        grid-template-columns: 1fr 1fr 1fr;
+        grid-template-rows: auto auto;
+        align-items: start;
+    }
+
+    .habitacion .info {
+        grid-column: 1 / 3;
+    }
+
+    .habitaciones-pagina .arboles {
+        grid-template-columns: 1fr 1fr 1fr;
+    }
+}
+
+@media (max-width: 768px) {
+    .habitacion {
+        grid-template-columns: 1fr;
+        grid-template-rows: auto;
+    }
+
+    .habitacion img {
+        margin-bottom: 20px;
+    }
+
+    .habitacion .info {
+        grid-column: 1 / 2;
+    }
+
+    .habitaciones-pagina .arboles {
+        grid-template-columns: 1fr;
+    }
+}
+
+@media (max-width: 480px) {
+    .habitaciones-pagina h2 {
+        font-size: 24px;
+    }
+
+    .informacion p {
+        font-size: 14px;
+    }
+
+    .comodidades ul {
+        margin-left: 10px;
+        text-align: left;
+    }
 }
 
 /* ------------------------------- PAGE SERVICIOS -------------------------------- */
@@ -740,6 +794,12 @@ form textarea {
     .servicios .lista ul {
     padding: 15px;
     }
+
+    .servicios .lista{
+        max-height: auto;
+        display: flex;
+        flex-direction: column;
+    } 
 }
 
 
