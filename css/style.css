@@ -618,7 +618,7 @@ footer img {
     background-color: sandybrown;
 }
 
-@media (min-width:400px) and (max-width:620px){
+@media (min-width:320px) and (max-width:620px){
     .cards-container{
         grid-template-columns: 1fr !important;
         grid-template-rows: auto;
