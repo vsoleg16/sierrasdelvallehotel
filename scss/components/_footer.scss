@@ -1,0 +1,35 @@
+.footer {
+    background-color: rgb(211, 197, 182);
+    background-size: cover;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    flex-wrap: wrap;
+    padding: 30px;
+    height: auto;
+    div {
+        text-align: center;
+        margin-bottom: 20px;
+        img {
+            max-height: 150px;
+            margin: 0 auto;
+            .contacto {
+                p {
+                    font-size: 15px;
+                    text-align: center;
+                    margin: 0;
+                    padding: 0;
+                    line-height: 1, 1;
+                    /* ajuste de la altura de línea */
+                }
+            }
+        }
+    }
+    .fixed {
+        position: fixed;
+        bottom: 50px;
+        right: 60px;
+        width: 10px;
+        height: 20px;
+    }
+}

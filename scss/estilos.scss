@@ -1,9 +1,13 @@
 @import "./base/sass";
 @import "./base/generales";
 @import "./components/header";
-@import "./components/hero";
-@import "./components/habitaciones";
-@import "./components/imagenes";
-@import "./components/pago";
+@import"./components/main";
 @import "./components/footer";
+@import"./components/habitaciones";
+@import"./components/servicios";
+@import"./components/actividades";
+@import"./components/contacto";
 @import "./base/queries";
+
+
+

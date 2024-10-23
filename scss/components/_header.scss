@@ -1,0 +1,82 @@
+header {
+    &.bg-white {
+        &.sticky-top {
+            .container {
+                .row {
+                    &.align-items-center {
+                        &.py-3 {
+                            .col-12 {
+                                &.col-md-3 {
+                                    &.text-center {
+                                        &.text-md-left {
+                                            img {
+                                                &.img-fluid {
+                                                    max-height: 100px;
+                                                }
+                                            }
+                                        }
+                                    }
+                                }
+
+                                &.col-md-9 {
+                                    nav {
+                                        &.navbar {
+                                            &.navbar-expand-md {
+                                                &.navbar-light {
+                                                    .p-0 {
+                                                        display: flex;
+                                                        justify-content: flex-end;
+
+                                                        .navbar-toggler {
+                                                            &[type="button"] {
+                                                                &[data-bs-toggle="collapse"] {
+                                                                    &[data-bs-target="#navbarNav"] {
+                                                                        &[aria-controls="navbarNav"] {
+                                                                            &[aria-expanded="false"] {
+                                                                                &[aria-label="Toggle navigation"] {
+                                                                                    .navbar-toggler-icon {
+                                                                                        background-image: url("./img/flavicon.png");
+                                                                                        width: 30px;
+                                                                                        height: 30px;
+                                                                                    }
+                                                                                }
+                                                                            }
+                                                                        }
+                                                                    }
+                                                                }
+                                                            }
+                                                        }
+
+                                                        .collapse {
+                                                            &.navbar-collapse {
+                                                                #navbarNav {
+                                                                    .navbar-nav {
+                                                                        &.ms-auto {
+                                                                            .nav-item {
+                                                                                .nav-link {
+                                                                                    font-family: Arial, Helvetica, sans-serif;
+                                                                                    color: rgb(70, 68, 66);
+                                                                                    font-size: 15px;
+                                                                                    margin: 10px;
+                                                                                }
+                                                                            }
+                                                                        }
+                                                                    }
+                                                                }
+                                                            }
+                                                        }
+
+                                                    }
+                                                }
+                                            }
+                                        }
+                                    }
+                                }
+                            }
+                        }
+                    }
+                }
+            }
+        }
+    }
+}
