@@ -15,7 +15,7 @@
             margin: 0 auto;
             .contacto {
                 p {
-                    font-size: 15px;
+                    @include parrafos-varios;
                     text-align: center;
                     margin: 0;
                     padding: 0;
@@ -26,10 +26,6 @@
         }
     }
     .fixed {
-        position: fixed;
-        bottom: 50px;
-        right: 60px;
-        width: 10px;
-        height: 20px;
+        @include whatsapp;
     }
 }

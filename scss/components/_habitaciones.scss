@@ -1,47 +1,45 @@
 .habitaciones-pagina {
-    h2 {
-        font-size: 30px;
+    .habitacion {
+        display: grid;
+        grid-template-columns: 1fr 1fr 1fr;
+        gap: 20px;
+        background-color: rgb(243, 232, 218);
+        padding: 20px;
+        border: 1px solid;
         color: rgb(70, 68, 66);
-        text-align: center;
-        margin-top: 25px;
-        margin-bottom: 40px;
-        .habitacion {
-            display: grid;
-            grid-template-columns: 1fr 1fr 1fr;
-            gap: 20px;
-            background-color: rgb(243, 232, 218);
-            padding: 20px;
-            border: 1px solid;
-            color: rgb(70,68,66);
-            align-items: center;
-            img {
-                width: 100%;
-                height: auto;
-                .informacion {
-                    display: grid;
-                    grid-column: 2 / 3;
-                    display: flex;
-                    flex-direction: column;
-                    gap: 10px;
-                    padding: 20px;
+        align-items: center;
+
+        img {
+            width: 100%;
+            height: auto;
+
+            .informacion {
+                display: grid;
+                grid-column: 2 / 3;
+                display: flex;
+                flex-direction: column;
+                gap: 10px;
+                padding: 20px;
+                text-align: center;
+
+                h5 {
+                    font-size: 20px;
+                    color: rgb(70, 68, 66);
                     text-align: center;
-                    h3 {
-                        font-size: 20px;
-                        color: rgb(70, 68, 66);
-                        text-align: center;
-                        margin: 0;
-                        margin-bottom: 10px;
-                        p {
-                            font-size: 14px;
-                            .comodidades {
-                                ul {
-                                    li {
-                                        list-style-type: circle;
-                                        padding: 0;
-                                        margin-left: 70px;
-                                        text-align: justify;
-                                        font-size: 14px;
-                                    }
+                    margin: 0;
+                    margin-bottom: 10px;
+
+                    p {
+                        font-size: 14px;
+
+                        .comodidades {
+                            ul {
+                                li {
+                                    list-style-type: circle;
+                                    padding: 0;
+                                    margin-left: 70px;
+                                    text-align: justify;
+                                    font-size: 14px;
                                 }
                             }
                         }

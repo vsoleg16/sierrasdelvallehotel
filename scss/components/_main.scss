@@ -1,19 +1,15 @@
+// styles.scss
+
 .hero {
     height: 40vh;
     background-image: url(../img/Fondo-Header.jpg);
     background-size: cover;
     background-position: center;
     width: 100%;
-    display: flex;
-    justify-content: center;
-    align-items: center;
+    @extend %flex-center;
 
     h1 {
-        color: white;
-        font-size: 40px;
-        font-weight: normal;
-        text-align: center;
-        text-shadow: 2px 2px 5px rgba(0, 0, 0, 0.7);
+        @include primera-fuente;
     }
 
     .descripcion {
@@ -24,28 +20,20 @@
         flex-wrap: wrap;
 
         img {
-            width: 100%;
-            max-width: 600px;
-            height: auto;
-            margin: 40px auto 5px;
+            @include img-descripcion;
 
             div {
                 width: 50%;
                 text-align: center;
 
                 h2 {
-                    font-size: 45px;
-                    font-weight: lighter;
-                    color: sienna;
+                    @include segunda-fuente;
+                    font-weight: 600;
                     text-align: center;
                     margin-bottom: 20px;
 
                     p {
-                        font-size: 16px;
-                        text-align: center;
-                        color: rgb(70, 68, 66);
-                        text-align: center;
-                        /*flexbox*/
+                        @include parrafos-varios;
                         display: flex;
                         justify-content: center;
                         margin-top: 20px;
@@ -58,75 +46,56 @@
 }
 
 .habitaciones {
-    background-color: rgb(243, 232, 218);
+    background-color: $background-color-habformserv;
     height: 600px;
     margin-top: 35px;
 
-    h2 {
-        font-size: 30px;
-        text-align: center;
-        color: rgb(70, 68, 66);
+    h3 {
+        display: flex;
+        align-items: center;
+        position: relative;
+        @include tercera-fuente;
         padding-top: 25px;
         padding-bottom: 5px;
-        position: relative;
+    }
 
-        .tarjetitas {
-            display: flex;
-            flex-direction: row;
-            justify-content: space-around;
-            align-items: center;
+    .tarjetitas {
+        display: flex;
+        flex-direction: row;
+        justify-content: space-around;
+        align-items: center;
 
-            div {
-                background-color: white;
-                border: 1px solid #ddd;
-                border-radius: 5px;
-                box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
-                width: 300px;
-                height: 450px;
-                margin: 30px;
-                display: flex;
-                flex-direction: column;
-                justify-content: space-between;
-                padding: 4px;
-                box-sizing: border-box;
+        div {
+            @include tarjetita-style;
 
-                img {
-                    width: 100%;
-                    height: auto;
+            img {
+                width: 100%;
+                height: auto;
+            }
 
-                    h3 {
-                        font-size: 20px;
-                        color: rgb(214, 160, 105);
-                        /* COLOR DE BOTON*/
-                        margin: 10px 0;
-                        text-align: center;
+            h4 {
+                @include cuarta-fuente;
+                margin: 10px 0;
+                text-align: center;
+            }
 
-                        p {
-                            font-family: Arial, Helvetica, sans-serif;
-                            font-size: 15px;
-                            text-align: center;
-                            margin: 10px 0;
-                            overflow: hidden;
-                            /* acomodar parrafo en la card*/
-                            display: -webkit-box;
-                            -webkit-line-clamp: 4;
-                            -webkit-box-orient: vertical;
-                            line-clamp: 4;
+            p {
+                @include parrafos-varios;
+                text-align: center;
+                margin: 10px 0;
+                overflow: hidden;
+                display: -webkit-box;
+                -webkit-line-clamp: 4;
+                -webkit-box-orient: vertical;
+                line-clamp: 4;
+            }
 
-                            a {
-                                background-color: rgb(230, 204, 182);
-                                color: white;
-                                font-size: 20px;
-                                border: none;
-                                cursor: pointer;
-                                /*manito*/
-                                padding: 10px;
-                                text-align: center;
-                                text-decoration: none;
-                                margin-top: auto;
-                            }
-                        }
-                    }
+            a {
+                @include button-style;
+
+
+                &:hover {
+                    @include hover-styles;
                 }
             }
         }
@@ -134,22 +103,20 @@
 }
 
 .galeria {
-    h2 {
+    h3 {
         display: flex;
         align-items: center;
         position: relative;
         justify-content: center;
-        font-size: 30px;
+        @include tercera-fuente;
         margin: 20px;
         padding: 20px;
-        color: rgb(70, 68, 66);
     }
 
     #imageCarousel {
         &.carousel {
             .carousel-inner {
-                display: flex;
-                justify-content: flex-start;
+                @extend %flex-container;
                 overflow: hidden;
                 scroll-snap-type: x mandatory;
                 padding-bottom: 15px;
@@ -164,14 +131,7 @@
                         .d-flex {
                             &.justify-content-start {
                                 img {
-                                    flex: 0 0 auto;
-                                    width: auto;
-                                    max-width: 250px;
-                                    height: auto;
-                                    object-fit: cover;
-                                    margin: 0 10px;
-                                    border-radius: 10px;
-                                    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
+                                    @include carousel-item-style;
                                 }
                             }
                         }
@@ -193,15 +153,16 @@
 }
 
 
+
+
 .forma {
     text-align: center;
     padding: 20px;
 
-    h2 {
+    h3 {
         position: relative;
         text-align: center;
-        font-size: 30px;
-        color: rgb(70, 68, 66);
+        @include tercera-fuente;
         text-align: center;
         margin-top: 30px;
         margin-bottom: 40px;
@@ -224,7 +185,7 @@
 
                     p {
                         margin-top: 10px;
-                        font-size: 17px;
+                        @include parrafos-varios;
                     }
                 }
             }
