@@ -15,7 +15,7 @@
 }
 
 .formulario {
-    background-color: #f3e8da;
+    background-color: $background-general;
     padding: 30px;
     border-radius: 10px;
     display: flex;
@@ -24,11 +24,13 @@
     height: 525px;
     border: 1px solid #ccc;
     box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+
     h6 {
-        font-size: 25px;
+        @include sexta-fuente;
         text-align: center;
         margin-bottom: 20px;
     }
+
     form {
         display: flex;
         flex-direction: column;
@@ -36,25 +38,34 @@
         width: 100%;
         justify-content: center;
         flex-grow: 1;
+
         div {
-        display: flex;
-        flex-direction: column;
-        gap: 5px;
+            display: flex;
+            flex-direction: column;
+            gap: 5px;
         }
+
         label {
-        margin-bottom: 3px;
+            margin-bottom: 3px;
         }
+
         input,
         textarea {
-        padding: 5px;
-        font-size: 15px;
-        width: 100%;
-        box-sizing: border-box; /*padding y border dentro del width*/
+            padding: 5px;
+            @include parrafos-varios;
+            width: 100%;
+            box-sizing: border-box;
+            /*padding y border dentro del width*/
         }
+
         .form-buttons {
-        display: flex;
-        justify-content: space-between;
-        margin: 10px;
-        }
+            display: flex;
+            justify-content: center; /* Centro de los botones */
+            width: fit-content;
+            max-width: 150px;
+            margin-left: auto;
+            margin-right: auto;
+            margin: 10px;
+        }        
     }
 }

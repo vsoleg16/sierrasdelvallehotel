@@ -1,5 +1,5 @@
-.footer {
-    background-color: rgb(211, 197, 182);
+footer {
+    background-color: rgb(243, 232, 218);
     background-size: cover;
     display: flex;
     justify-content: space-between;
@@ -7,24 +7,47 @@
     flex-wrap: wrap;
     padding: 30px;
     height: auto;
-    div {
+
+    .icono {
         text-align: center;
         margin-bottom: 20px;
+
         img {
             max-height: 150px;
             margin: 0 auto;
-            .contacto {
-                p {
-                    @include parrafos-varios;
-                    text-align: center;
-                    margin: 0;
-                    padding: 0;
-                    line-height: 1, 1;
-                    /* ajuste de la altura de línea */
-                }
+        }
+    }
+
+    .contacto {
+        p {
+            @include parrafos-varios;
+            text-align: center;
+            margin: 0;
+            padding: 0;
+            line-height: 1, 1;
+        }
+    }
+
+    .maps {
+        iframe {
+            width: 200px;
+            height: 100px;
+            border: 0;
+        }
+    }
+
+    .redes {
+        a {
+            img {
+                transition: transform 0.4s ease-in-out;
+            }
+
+            &:hover img {
+                transform: scale(1.2); /*zoom*/
             }
         }
     }
+
     .fixed {
         @include whatsapp;
     }

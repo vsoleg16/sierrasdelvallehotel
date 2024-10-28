@@ -1,39 +1,113 @@
 /*---Header Nav---*/
 
 @media (max-width: 768px) {
-    header .navbar {
-        justify-content: right;
-    }
+    header {
+        height: auto;
 
-    header .navbar-nav {
-        flex-direction: column;
-    }
+        .container {
+            .row {
+                flex-direction: column;
 
-    header .navbar-nav .nav-item {
-        margin-bottom: 10px;
-        width: 100%;
-    }
+                .col-12.col-md-3 {
+                    display: flex;
+                    justify-content: center;
+                    margin-bottom: 5px;
 
-    header .navbar-nav .nav-item .nav-link {
-        padding: 10px 0;
+                    img {
+                        max-height: 90px;
+                    }
+                }
+
+                .col-12.col-md-9 {
+                    .navbar {
+                        justify-content: space-between;
+
+                        .navbar-toggler {
+                            display: block;
+                            margin-left: auto;
+                        }
+
+                        .navbar-collapse {
+                            display: none;   /*oculta el menú inicialmente*/
+
+                            &.collapse.show {
+                                display: flex;
+                                flex-direction: column;
+                                width: 100%;
+                                margin-top: 10px;
+
+                                .navbar-nav {
+                                    display: flex;
+                                    flex-direction: column;
+                                    gap: 5px;
+                                    justify-content: center;
+
+                                }
+                            }
+                        }
+                    }
+                }
+            }
+        }
     }
 }
 
-/*---- Hero imagen paisaje  -----*/
+/*--------- Hero imagen paisaje  -----*/
 
-@media (min-width: 320px) and (max-width: 1024px) {
+@media (min-width: 320px) and (max-width: 768px) {
     .hero {
-        height: 20vh;
+        height: 35vh;
+        background-size: cover;
     }
 
     .hero h1 {
-        font-size: 24px;
+        font-size: 18px;
     }
 }
 
-/*---- Descripcion ----*/
+/*-------Descripcion Index------*/
 
-@media (min-width:320px) and (max-width: 768px) {
+@media (max-width: 1200px) {
+    .descripcion {
+        display: flex;
+        justify-content: space-evenly;
+        align-items: center;
+        padding: 15px;
+        flex-wrap: wrap;
+    }
+
+    .descripcion div {
+        width: 50%;
+        text-align: center;
+    }
+
+    .descripcion img {
+        width: 100%;
+        max-width: 400px;
+        height: auto;
+        margin: 40px auto 5px;
+        border-radius: 2px;
+        border: 2px solid #ccc;
+        box-shadow: 0 0 10px rgba(0, 0, 0, 0.6);
+    }
+
+    .descripcion div h2 {
+        font-size: 25px;
+        font-weight: 600;
+        text-align: center;
+        margin-top: 20px;
+        margin-bottom: 20px;
+    }
+
+    .descripcion div p {
+        font-size: 14px;
+        display: flex;
+        justify-content: center;
+        margin: 20px 10px 20px 20px;
+    }
+}
+
+@media (max-width: 768px) {
     .descripcion {
         flex-direction: column;
         align-items: center;
@@ -60,9 +134,9 @@
     }
 }
 
-/*----- habitaciones -----*/
+/*------ Habitaciones Index-----------*/
 
-@media (max-width:1028px) {
+@media (max-width:1200px) {
     .habitaciones {
         height: auto;
         margin: 10px;
@@ -83,7 +157,7 @@
     }
 }
 
-@media (max-width: 768px) {
+@media (min-width: 680px) and (max-width: 768px) {
     .habitaciones {
         height: auto;
         margin: 10px;
@@ -99,30 +173,10 @@
         grid-template-columns: 1fr 1fr;
         gap: 10px;
         justify-content: center;
-        padding-left: 25px;
     }
 }
 
-@media (min-width: 480px) and (max-width: 768px) {
-    .habitaciones {
-        height: auto;
-        padding: 10px;
-    }
-
-    .habitaciones h3 {
-        font-size: 20px;
-        text-align: center;
-    }
-
-    .habitaciones .tarjetitas {
-        display: grid;
-        grid-template-columns: 1fr;
-        gap: 10px;
-        justify-content: center;
-    }
-}
-
-@media (min-width: 320px) and (max-width: 480px) {
+@media (max-width: 680px) {
     .habitaciones {
         height: auto;
         padding: 10px;
@@ -137,10 +191,15 @@
         grid-template-columns: 1fr;
         gap: 10px;
         justify-content: center;
+        padding: 0 15px;
+    }
+
+    .habitaciones .tarjetitas div {
+        margin: 0 auto;
     }
 }
 
-/*---- Galeria ------*/
+/*--------------Galeria Index----------*/
 
 @media (max-width: 768px) {
     .galeria h3 {
@@ -158,26 +217,9 @@
     }
 }
 
-/*------ Formas de pago ---*/
+/*----------Forma de pago Index----------*/
 
-@media (max-width: 768px) {
-    .forma h3 {
-        font-size: 25px;
-        margin-bottom: 30px;
-    }
-
-    .pago {
-        display: grid;
-        grid-template-columns: 1fr;
-        gap: 10px;
-    }
-
-    .pago img {
-        width: 80px;
-    }
-}
-
-@media (min-width: 320px) and (max-width:480px) {
+@media (max-width:480px) {
     .forma h3 {
         font-size: 18px;
         position: relative;
@@ -196,194 +238,321 @@
     }
 }
 
-/*------ Footer -----*/
+/*---------------Footer-------------------*/
 
-@media (max-width: 768px) {
+@media (min-width: 560px) and (max-width: 1200px) {
     footer {
-        flex-direction: column;
-        height: auto;
-        padding: 20px;
-    }
-
-    footer div {
-        margin-bottom: 20px;
-        width: 100%;
-    }
-
-    footer img {
-        margin: 0 auto;
-    }
-}
-
-/*------ Habitaciones ----*/
-
-@media (min-width:768px) and (max-width: 1028px) {
-    .habitacion {
         display: grid;
         grid-template-columns: 1fr 1fr;
-        gap: 20px;
-        align-items: start;
-    }
-
-    .habitacion img {
-        grid-column: 1 / 3;   /*imagen ocupa toda la fila*/
-        width: 100%;
-        height: auto;
-    }
-
-    .informacion {
-        grid-column: 1 / 2;  /*la primera columna*/
-        text-align: center;
-    }
-
-    .comodidades {
-        grid-column: 2/3;  /*la segunda columna*/
-        margin-top: 40px;
-    }
-
-    .comodidades ul li {
-        list-style-type: circle;
-        list-style-position: inside;
-        text-align: justify;
-    }
-}
-
-@media (min-width:480px) and (max-width: 768px) {
-    .habitacion {
-        display: grid;
-        grid-template-columns: 1fr;
-        gap: 20px;
-        align-items: start;
-    }
-
-    .habitacion img {
-        grid-column: 1/2;   /*imagen ocupa toda la fila*/
-        width: 100%;
-        height: auto;
-    }
-
-    .informacion {
-        grid-column: 1/2;   /*la primera columna*/
-        text-align: center;
-    }
-
-    .comodidades {
-        grid-column: 1/2;   /*la segunda columna*/
-        margin-top: 10px;
-    }
-
-    .comodidades ul li {
-        list-style-type: circle;
-        list-style-position: inside;
-        text-align: justify;
-    }
-}
-
-@media (min-width: 320px) and (max-width: 480px) {
-    .habitacion {
-        display: grid;
-        grid-template-columns: 1fr;
-        gap: 20px;
-        align-items: start;
-    }
-
-    .habitacion img {
-        grid-column: 1;         /*imagen ocupa toda la fila*/
-        width: 100%;
-        height: auto;
-    }
-
-    .informacion {
-        grid-column: 1;          /*la primera columna*/
-        text-align: center;
-    }
-
-    .comodidades {
-        display: flex;
-        justify-content: center;
+        grid-template-rows: auto auto;
+        justify-items: center;
         align-items: center;
-        grid-column: 1;          /*comodidades ocupan toda la fila*/
-        margin-top: 10px;
-    }
+        gap: 20px;
 
-    .comodidades ul li {
-        list-style-type: circle;
-        list-style-position: inside;
-        text-align: justify;
+        .icono,
+        .contacto {
+            font-size: 15px;
+        }
+
+        .maps,
+        .redes {
+            width: 100%;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            gap: 20px;
+        }
     }
 }
 
-/*----- Servicios -----*/
+@media (min-width: 320px) and (max-width: 560px) {
+    footer {
+        display: flex;
+        flex-direction: column;
+        height: auto;
+        padding: 10px;
+
+        .icono,
+        .contacto {
+            margin-bottom: 5px;
+            font-size: 14px;
+        }
+
+        .maps,
+        .redes {
+            margin-bottom: 20px;
+            width: 100%;
+            text-align: center;
+        }
+    }
+}
+
+/*------------Page Habitaciones-----------*/
+
+@media (min-width: 768px) and (max-width: 1200px) {
+    .habitaciones-pagina {
+        .habitacion {
+            display: grid;
+            grid-template-columns: 1fr 1fr;   /*primera fila dos columnas*/
+            grid-template-rows: auto auto;   /*dos filas*/
+            gap: 20px;
+            height: auto;
+
+            img {
+                grid-column: 1 / 2;   /*primera columna - imagen*/
+                grid-row: 1;          /*fila1*/
+                width: 100%;
+                height: auto;
+                margin-bottom: 10px;
+            }
+
+            .informacion {
+                grid-column: 2 / 3;    /*segunda columna - informacion*/
+                grid-row: 1;           /*fila2*/
+                text-align: center;
+                padding: 10px;
+
+                h5 {
+                    margin-bottom: 10px;
+                }
+
+                p {
+                    margin-top: 10px;
+                }
+            }
+
+            .comodidades {
+                grid-column: 1 / span 2; 
+                grid-row: 2;    /*segunda fila*/
+                display: flex;
+                flex-wrap: wrap;            /*se ajusten dos hileras*/
+                justify-content: center;     /*centra las comodidades*/
+                gap: 10px;
+                margin-top: 10px;
+
+                ul {
+                    padding: 0;
+
+                    li {
+                        flex: 1 1 45%;   /*ocupa el 45% del espacio (dos columnas)*/
+                        list-style-type: circle;
+                        text-align: justify;
+                    }
+                }
+            }
+        }
+    }
+}
+
+
+
+@media (min-width: 320px) and (max-width: 768px) {
+    .habitaciones-pagina {
+        .habitacion {
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            gap: 20px;
+            height: auto;
+
+            img {
+                width: 100%;
+                height: auto;
+                margin-bottom: 10px;
+            }
+
+            .informacion {
+                text-align: center;
+                padding: 10px;
+
+                h5 {
+                    margin-bottom: 10px;
+                }
+
+                p {
+                    margin-top: 10px;
+                }
+            }
+
+            .comodidades {
+                margin-top: 10px;
+
+                ul {
+                    display: flex;
+                    flex-wrap: wrap;      /* se ajusten en dos hileras*/
+                    justify-content: center;
+                    /*centra las comodidades*/
+                    gap: 10px;
+                    padding: 0;
+
+                    li {
+                        flex: 1 1 45%;  /*ocupa el 45% del espacio (dos columnas)*/
+                        list-style-type: circle;
+                        text-align: justify;
+                    }
+                }
+            }
+        }
+    }
+}
+
+
+/*-------Servicios---------*/
+
 
 @media (max-width: 768px) {
     .servicios {
-        grid-template-columns: 1fr;
+        display: flex;
+        flex-direction: column;
+        align-items: center;
         gap: 20px;
+        padding: 0 10px;
     }
 
-    .servicios img {
+    .servicios img,
+    .lista {
+        width: 100%;
+        max-width: 500px;
         height: auto;
+        margin: 20px auto 0;
     }
 
     .lista h6 {
-        height: auto;
-        font-size: 24px;
-        padding: 20px;
+        font-size: 20px;
+        padding: 10px;
     }
 
-    .servicios .lista {
-        max-height: auto;
+    .lista ul li {
+        font-size: 15px;
+        max-height: none;
         display: flex;
         flex-direction: column;
+        padding: 5px 10px;
     }
 }
 
-@media (max-width: 320px) {
-    .servicios .lista {
-        padding: 15px;
-    }
+/*------Actividades-------*/
 
-    .servicios .lista h6 {
-        font-size: 18px;
-    }
-
-    .servicios .lista ul {
-        padding: 15px;
-    }
-
-    .servicios .lista {
-        max-height: auto;
+@media (max-width:940px) {
+    .actividades {
         display: flex;
         flex-direction: column;
-    }
-}
-
-/*----- Page Actividades ---*/
-
-@media (min-width:320px) and (max-width:620px) {
-    .cards-container {
-        grid-template-columns: 1fr !important;
-        grid-template-rows: auto;
         align-items: center;
-        max-width: 100px !important;
-        padding-left: 20px;
-        padding-right: 20px;
+
+        .actividades h2 {
+            font-size: 18px;
+            font-weight: 200;
+            text-align: center;
+            margin: 10px;
+
+            .actividades h5 {
+                font-size: 30px;
+
+                .actividades p {
+                    font-size: 20px;
+                }
+            }
+        }
+    }
+
+    .turismo {
+        .cards-container {
+            display: grid;
+            grid-template-columns: repeat(2, 1fr);
+            /*dos columnas iguales*/
+            grid-template-rows: auto auto;
+            /*dos filas*/
+            gap: 10px;
+            justify-items: center;
+            align-items: center;
+            margin-bottom: 20px;
+            max-width: 1000px !important;
+            /*ajusta tamaño max contenedor*/
+
+            grid-template-areas:
+                "card1 card2"
+                "card3 card3";
+
+            .card1 {
+                grid-area: card1;
+            }
+
+            .card2 {
+                grid-area: card2;
+            }
+
+            .card3 {
+                grid-area: card3;
+            }
+        }
     }
 }
 
-/*------ Contacto -----*/
+@media (max-width:620px) {
+    .actividades {
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+
+        .actividades h2 {
+            font-size: 18px;
+            font-weight: 200;
+            text-align: center;
+            margin: 10px;
+
+            .actividades h5 {
+                font-size: 30px;
+
+                .actividades p {
+                    font-size: 20px;
+                }
+            }
+        }
+    }
+
+    .turismo {
+        .cards-container {
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            gap: 20px;
+            margin-bottom: 20px;
+            max-width: 1000px !important;
+            /*tamaño max contenedor*/
+        }
+
+        .card1,
+        .card2,
+        .card3 {
+            width: 100%;      /*ajusta ancho cards*/
+            max-width: 500px;   /*ancho max cards*/
+        }
+    }
+}
+
+/*-----Contacto-------*/
 
 @media (max-width: 768px) {
     .comunicate {
-        grid-template-columns: 1fr;
+        display: flex;
+        flex-direction: column;
+        align-items: center;
         gap: 20px;
+        padding: 0 10px;
     }
 
-    .comunicate img {
-        height: auto;
+    .comunicate img,
+    .formulario {
+        width: 100%;
+        max-width: 500px;
+        margin: 20px auto;
     }
 
     .formulario {
-        height: auto;
+        padding: 20px 20px;    /*espacio borde y contenido*/
+    }
+
+    .formulario form label {
+        font-size: 18px;
     }
 }

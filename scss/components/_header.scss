@@ -1,73 +1,56 @@
 header {
-    &.bg-white {
-        &.sticky-top {
-            .container {
-                .row {
-                    &.align-items-center {
-                        &.py-3 {
-                            .col-12 {
-                                &.col-md-3 {
-                                    &.text-center {
-                                        &.text-md-left {
-                                            img {
-                                                &.img-fluid {
-                                                    max-height: 100px;
-                                                }
-                                            }
-                                        }
-                                    }
-                                }
+    height: 70px; // Altura de la barra de navegación
+    background-color: white;
+    display: flex;
+    align-items: center;
 
-                                &.col-md-9 {
-                                    nav {
-                                        &.navbar {
-                                            &.navbar-expand-md {
-                                                &.navbar-light {
-                                                    .p-0 {
-                                                        display: flex;
-                                                        justify-content: flex-end;
+    .container {
+        max-width: 1200px;
+        margin: 0 auto;
+        padding: 0 15px;
 
-                                                        .navbar-toggler {
-                                                            &[type="button"] {
-                                                                &[data-bs-toggle="collapse"] {
-                                                                    &[data-bs-target="#navbarNav"] {
-                                                                        &[aria-controls="navbarNav"] {
-                                                                            &[aria-expanded="false"] {
-                                                                                &[aria-label="Toggle navigation"] {
-                                                                                    .navbar-toggler-icon {
-                                                                                        background-image: url("./img/flavicon.png");
-                                                                                        width: 30px;
-                                                                                        height: 30px;
-                                                                                    }
-                                                                                }
-                                                                            }
-                                                                        }
-                                                                    }
-                                                                }
-                                                            }
-                                                        }
+        .row {
+            display: flex;
+            align-items: center;
+            justify-content: space-between;
 
-                                                        .collapse {
-                                                            &.navbar-collapse {
-                                                                #navbarNav {
-                                                                    .navbar-nav {
-                                                                        &.ms-auto {
-                                                                            .nav-item {
-                                                                                .nav-link {
-                                                                                    @include quinta-fuente;
-                                                                                    margin: 10px;
-                                                                                }
-                                                                            }
-                                                                        }
-                                                                    }
-                                                                }
-                                                            }
-                                                        }
+            .col-12.col-md-3 {
+                display: flex;
+                justify-content: flex-start;
 
-                                                    }
-                                                }
-                                            }
-                                        }
+                img {
+                    max-height: 80px;
+                }
+            }
+
+            .col-12.col-md-9 {
+                .navbar {
+                    padding: 0;
+                    display: flex;
+                    align-items: center;
+                    justify-content: flex-end;
+
+                    .navbar-toggler {
+                        display: none;       /*ocultar en pantallas grandes*/
+                        border: none;
+                        background: transparent;
+                    }
+
+                    .navbar-collapse {
+                        display: flex;
+                        justify-content: flex-end;
+
+                        .navbar-nav {
+                            display: flex;
+                            gap: 10px;
+
+                            .nav-item {
+                                .nav-link {
+                                    @include quinta-fuente; // Aplica la quinta fuente aquí
+
+                                    &:hover {
+                                        color: $button-hover-color;
+
                                     }
                                 }
                             }

@@ -16,27 +16,26 @@
     }
 
     .lista {
-        background-color: rgb(243, 232, 218);
+        background-color: $background-general;
         padding: 30px;
         min-height: 530px;
         border-radius: 10px;
         border: 1px solid #ccc;
         box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
-        font-size: 15px;
         display: flex;
         flex-direction: column;
         overflow: auto;
 
         h6 {
             grid-column: span 2;
-            font-size: 30px;
-            color: rgb(70, 68, 66);
+            @include sexta-fuente;
             text-align: center;
             margin-bottom: 5px;
         }
 
         ul {
             li {
+                @include parrafos-varios;
                 list-style: disc;
                 text-align: justify;
                 padding: 0;
