@@ -28,7 +28,8 @@
                         }
 
                         .navbar-collapse {
-                            display: none;   /*oculta el menú inicialmente*/
+                            display: none;
+                            /*oculta el menú inicialmente*/
 
                             &.collapse.show {
                                 display: flex;
@@ -293,22 +294,28 @@
     .habitaciones-pagina {
         .habitacion {
             display: grid;
-            grid-template-columns: 1fr 1fr;   /*primera fila dos columnas*/
-            grid-template-rows: auto auto;   /*dos filas*/
+            grid-template-columns: 1fr 1fr;
+            /*primera fila dos columnas*/
+            grid-template-rows: auto auto;
+            /*dos filas*/
             gap: 20px;
             height: auto;
 
             img {
-                grid-column: 1 / 2;   /*primera columna - imagen*/
-                grid-row: 1;          /*fila1*/
+                grid-column: 1 / 2;
+                /*primera columna - imagen*/
+                grid-row: 1;
+                /*fila1*/
                 width: 100%;
                 height: auto;
                 margin-bottom: 10px;
             }
 
             .informacion {
-                grid-column: 2 / 3;    /*segunda columna - informacion*/
-                grid-row: 1;           /*fila2*/
+                grid-column: 2 / 3;
+                /*segunda columna - informacion*/
+                grid-row: 1;
+                /*fila2*/
                 text-align: center;
                 padding: 10px;
 
@@ -322,11 +329,14 @@
             }
 
             .comodidades {
-                grid-column: 1 / span 2; 
-                grid-row: 2;    /*segunda fila*/
+                grid-column: 1 / span 2;
+                grid-row: 2;
+                /*segunda fila*/
                 display: flex;
-                flex-wrap: wrap;            /*se ajusten dos hileras*/
-                justify-content: center;     /*centra las comodidades*/
+                flex-wrap: wrap;
+                /*se ajusten dos hileras*/
+                justify-content: center;
+                /*centra las comodidades*/
                 gap: 10px;
                 margin-top: 10px;
 
@@ -334,7 +344,8 @@
                     padding: 0;
 
                     li {
-                        flex: 1 1 45%;   /*ocupa el 45% del espacio (dos columnas)*/
+                        flex: 1 1 45%;
+                        /*ocupa el 45% del espacio (dos columnas)*/
                         list-style-type: circle;
                         text-align: justify;
                     }
@@ -379,14 +390,16 @@
 
                 ul {
                     display: flex;
-                    flex-wrap: wrap;      /* se ajusten en dos hileras*/
+                    flex-wrap: wrap;
+                    /* se ajusten en dos hileras*/
                     justify-content: center;
                     /*centra las comodidades*/
                     gap: 10px;
                     padding: 0;
 
                     li {
-                        flex: 1 1 45%;  /*ocupa el 45% del espacio (dos columnas)*/
+                        flex: 1 1 45%;
+                        /*ocupa el 45% del espacio (dos columnas)*/
                         list-style-type: circle;
                         text-align: justify;
                     }
@@ -397,7 +410,54 @@
 }
 
 
-/*-------Servicios---------*/
+/*-------------Servicios-------------*/
+
+@media (min-width: 1024px) {
+    .servicios {
+        display: grid;
+        grid-template-columns: 1fr 2fr;  /*dos columnas una imagen dos la lista*/
+        gap: 20px;
+        padding: 20px 50px; 
+
+        img {
+            margin: 20px auto; 
+            width: 80%; 
+            max-width: 600px; 
+            height: auto;
+            max-height: 600px; 
+            border-radius: 10px;
+            border: 2px solid #ccc;
+            box-shadow: 0 0 10px rgba(0, 0, 0, 0.6);
+        }
+
+
+        .lista {
+            display: grid;
+            grid-template-columns: 1fr; /*dos columnas en la lista*/
+            width: 100%; 
+            max-width: 700px; 
+            height: auto;
+            margin: 20px auto 0;
+            padding: 10px 15px; 
+
+            h6 {
+                font-size: 24px; 
+                padding: 10px;
+                margin: 10px 20px; 
+            }
+
+            ul {
+                display: grid;
+                grid-template-columns: 1fr 1fr; 
+            }
+
+            ul li {
+                list-style: disc;
+                text-align: justify;
+            }
+        }
+    }
+}
 
 
 @media (max-width: 768px) {
@@ -407,37 +467,48 @@
         align-items: center;
         gap: 20px;
         padding: 0 10px;
-    }
 
-    .servicios img,
-    .lista {
-        width: 100%;
-        max-width: 500px;
-        height: auto;
-        margin: 20px auto 0;
-    }
+        img {
+            margin-top: 30px;
+            width: 90%;
+            max-width: 400px;
+            height: auto;
+            max-height: 500px;
+            border-radius: 10px;
+            border: 2px solid #ccc;
+            box-shadow: 0 0 10px rgba(0, 0, 0, 0.6);
+        }
 
-    .lista h6 {
-        font-size: 20px;
-        padding: 10px;
-    }
+        .lista {
+            width: 90%;
+            max-width: 250px;
+            /*ancho max de la lista*/
+            height: auto;
+            margin: 20px auto 0;
+            padding: 0 5px;
+        }
 
-    .lista ul li {
-        font-size: 15px;
-        max-height: none;
-        display: flex;
-        flex-direction: column;
-        padding: 5px 10px;
+        .lista h6 {
+            font-size: 20px;
+            padding: 10px;
+            margin: 10px 10px;
+        }
+
+        .lista ul li {
+            list-style: disc;
+            text-align: justify;
+            padding: 0;
+        }
     }
 }
 
-/*------Actividades-------*/
+
+/*-----------Actividades----------------*/
 
 @media (max-width:940px) {
     .actividades {
         display: flex;
         flex-direction: column;
-        align-items: center;
 
         .actividades h2 {
             font-size: 18px;
@@ -446,6 +517,7 @@
             margin: 10px;
 
             .actividades h5 {
+                text-align: justify;
                 font-size: 30px;
 
                 .actividades p {
@@ -492,7 +564,6 @@
     .actividades {
         display: flex;
         flex-direction: column;
-        align-items: center;
 
         .actividades h2 {
             font-size: 18px;
@@ -501,6 +572,7 @@
             margin: 10px;
 
             .actividades h5 {
+                text-align: justify;
                 font-size: 30px;
 
                 .actividades p {
@@ -524,35 +596,80 @@
         .card1,
         .card2,
         .card3 {
-            width: 100%;      /*ajusta ancho cards*/
-            max-width: 500px;   /*ancho max cards*/
+            width: 100%;
+            /*ajusta ancho cards*/
+            max-width: 500px;
+            /*ancho max cards*/
         }
     }
 }
 
-/*-----Contacto-------*/
+/*-----Page Contacto-------*/
 
-@media (max-width: 768px) {
+@media (max-width: 1024px) {
     .comunicate {
         display: flex;
         flex-direction: column;
         align-items: center;
-        gap: 20px;
-        padding: 0 10px;
-    }
+        gap: 40px;
+        padding: 60px 20px;
 
-    .comunicate img,
-    .formulario {
-        width: 100%;
-        max-width: 500px;
-        margin: 20px auto;
-    }
+        .fachada {
+            img {
+                width: 90%;
+                max-width: 500px;
+                height: auto;
+                max-height: 600px;
+                border-radius: 10px;
+                border: 2px solid #ccc;
+                box-shadow: 0 0 10px rgba(0, 0, 0, 0.6);
+            }
+        }
 
-    .formulario {
-        padding: 20px 20px;    /*espacio borde y contenido*/
-    }
+        .formulario {
+            width: 90%;
+            max-width: 400px;
+            margin: 20px auto;
+            padding: 15px 20px;
 
-    .formulario form label {
-        font-size: 18px;
+            form {
+                display: flex;
+                flex-direction: column;
+                gap: 10px;
+                width: 100%;
+                align-items: center;
+                justify-content: center;
+
+                div {
+                    display: flex;
+                    flex-direction: column;
+                    gap: 5px;
+                    width: 100%;
+                }
+
+                label {
+                    margin-bottom: 3px;
+                }
+
+                input,
+                textarea {
+                    padding: 5px;
+                    @include parrafos-varios;
+                    width: 100%;
+                    box-sizing: border-box;
+                }
+
+                textarea {
+                    height: 100px;
+
+                    .form-buttons {
+                        display: flex;
+                        justify-content: center;
+                        gap: 10px;
+                        margin: 20px auto;
+                    }
+                }
+            }
+        }
     }
 }

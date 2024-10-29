@@ -1,71 +1,84 @@
+
 .comunicate {
     display: grid;
     grid-template-columns: 1fr 1fr;
     gap: 40px;
     padding: 60px;
-    align-items: start;
+    align-items: center;
+    justify-items: center;
 
-    img {
-        width: 100%;
-        height: 530px;
+    .fachada {
+        display: flex;
+        justify-content: center;
+        align-items: center;
+
+        img {
+            width: 100%; 
+            max-width: 700px; 
+            height: auto;
+            max-height: 800px; 
+            border-radius: 10px;
+            border: 2px solid #ccc;
+            box-shadow: 0 0 10px rgba(0, 0, 0, 0.6);
+        }
+    }
+
+    .formulario {
+        background-color: $background-general;
+        padding: 20px 20px;         /*superior,inferior para disminuir la altura*/
         border-radius: 10px;
-        border: 2px solid #ccc;
-        box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
-    }
-}
-
-.formulario {
-    background-color: $background-general;
-    padding: 30px;
-    border-radius: 10px;
-    display: flex;
-    flex-direction: column;
-    justify-content: center;
-    height: 525px;
-    border: 1px solid #ccc;
-    box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
-
-    h6 {
-        @include sexta-fuente;
-        text-align: center;
-        margin-bottom: 20px;
-    }
-
-    form {
         display: flex;
         flex-direction: column;
-        gap: 5px;
-        width: 100%;
+        align-items: center;
         justify-content: center;
-        flex-grow: 1;
+        width: 80%;
+        max-width: 600px; 
+        border: 1px solid #ccc;
+        box-shadow: 0 0 10px rgba(0, 0, 0, 0.6);
 
-        div {
+        h6 {
+            @include sexta-fuente;
+            text-align: center;
+            margin-bottom: 20px;
+        }
+
+        form {
             display: flex;
             flex-direction: column;
-            gap: 5px;
-        }
-
-        label {
-            margin-bottom: 3px;
-        }
-
-        input,
-        textarea {
-            padding: 5px;
-            @include parrafos-varios;
+            gap: 10px;
             width: 100%;
-            box-sizing: border-box;
-            /*padding y border dentro del width*/
-        }
+            align-items: center;
+            justify-content: center;
 
-        .form-buttons {
-            display: flex;
-            justify-content: center; /* Centro de los botones */
-            width: fit-content;
-            max-width: 150px;
-            margin-left: auto;
-            margin-right: auto;
-            margin: 10px;
-        }        
+            div {
+                display: flex;
+                flex-direction: column;
+                gap: 5px;
+                width: 100%;
+            }
+
+            label {
+                margin-bottom: 3px;
+            }
+
+            input,
+            textarea {
+                padding: 5px;
+                @include parrafos-varios;
+                width: 100%;    /*ancho de los campos*/
+                box-sizing: border-box;
+            }
+
+            textarea {
+                height: 80px; /*campo de comentarios*/
+            }
+
+            .form-buttons {
+                display: flex;
+                justify-content: center;
+                gap: 10px;
+                margin: 20px auto;
+            }
+        }
     }
 }

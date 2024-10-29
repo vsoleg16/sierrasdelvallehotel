@@ -301,6 +301,8 @@ footer {
   align-items: center; }
   .habitaciones-pagina .habitacion img {
     width: 100%;
+    max-width: 500px;
+    max-height: 350px;
     height: auto;
     border-radius: 2px;
     border: 2px solid #ccc;
@@ -334,29 +336,35 @@ footer {
   grid-template-columns: 1fr 1fr;
   gap: 40px;
   padding: 60px;
-  align-items: start; }
+  align-items: center;
+  justify-items: center; }
   .servicios div img {
+    margin-top: 20px;
     width: 100%;
-    height: 530px;
+    max-width: 700px;
+    height: auto;
+    max-height: 800px;
     border-radius: 10px;
     border: 2px solid #ccc;
-    box-shadow: 0 0 10px rgba(0, 0, 0, 0.1); }
+    box-shadow: 0 0 10px rgba(0, 0, 0, 0.6); }
   .servicios .lista {
     background-color: #f3e8da;
-    padding: 30px;
-    min-height: 530px;
+    padding: 20px 20px;
     border-radius: 10px;
-    border: 1px solid #ccc;
-    box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
     display: flex;
     flex-direction: column;
-    overflow: auto; }
+    align-items: center;
+    justify-content: center;
+    width: 100%;
+    max-width: 300px;
+    border: 1px solid #ccc;
+    box-shadow: 0 0 10px rgba(0, 0, 0, 0.6); }
     .servicios .lista h6 {
       grid-column: span 2;
       font-size: 25px;
       color: #464442;
       text-align: center;
-      margin-bottom: 5px; }
+      margin-bottom: 25px; }
     .servicios .lista ul li {
       font-size: 14px;
       color: #464442;
@@ -367,19 +375,19 @@ footer {
 .actividades {
   display: flex;
   flex-direction: column;
-  align-items: center;
   gap: 20px;
-  padding: 20px; }
+  padding: 20px;
+  margin: 0 50px; }
   .actividades h2 {
     font-size: 40px;
     color: #deb780;
-    font-weight: 600;
+    font-weight: 500;
     text-align: center;
-    margin: 30px; }
+    margin: 20px; }
     .actividades h2 h5 {
       font-size: 20px;
       color: #464442;
-      margin: 0;
+      text-align: justify;
       padding-top: 10px; }
       .actividades h2 h5 p {
         font-size: 14px;
@@ -457,59 +465,68 @@ footer {
   grid-template-columns: 1fr 1fr;
   gap: 40px;
   padding: 60px;
-  align-items: start; }
-  .comunicate img {
-    width: 100%;
-    height: 530px;
+  align-items: center;
+  justify-items: center; }
+  .comunicate .fachada {
+    display: flex;
+    justify-content: center;
+    align-items: center; }
+    .comunicate .fachada img {
+      width: 100%;
+      max-width: 700px;
+      height: auto;
+      max-height: 800px;
+      border-radius: 10px;
+      border: 2px solid #ccc;
+      box-shadow: 0 0 10px rgba(0, 0, 0, 0.6); }
+  .comunicate .formulario {
+    background-color: #f3e8da;
+    padding: 20px 20px;
+    /*superior,inferior para disminuir la altura*/
     border-radius: 10px;
-    border: 2px solid #ccc;
-    box-shadow: 0 0 10px rgba(0, 0, 0, 0.1); }
-
-.formulario {
-  background-color: #f3e8da;
-  padding: 30px;
-  border-radius: 10px;
-  display: flex;
-  flex-direction: column;
-  justify-content: center;
-  height: 525px;
-  border: 1px solid #ccc;
-  box-shadow: 0 0 10px rgba(0, 0, 0, 0.1); }
-  .formulario h6 {
-    font-size: 25px;
-    color: #464442;
-    text-align: center;
-    margin-bottom: 20px; }
-  .formulario form {
     display: flex;
     flex-direction: column;
-    gap: 5px;
-    width: 100%;
+    align-items: center;
     justify-content: center;
-    flex-grow: 1; }
-    .formulario form div {
+    width: 80%;
+    max-width: 600px;
+    border: 1px solid #ccc;
+    box-shadow: 0 0 10px rgba(0, 0, 0, 0.6); }
+    .comunicate .formulario h6 {
+      font-size: 25px;
+      color: #464442;
+      text-align: center;
+      margin-bottom: 20px; }
+    .comunicate .formulario form {
       display: flex;
       flex-direction: column;
-      gap: 5px; }
-    .formulario form label {
-      margin-bottom: 3px; }
-    .formulario form input,
-    .formulario form textarea {
-      padding: 5px;
-      font-size: 14px;
-      color: #464442;
+      gap: 10px;
       width: 100%;
-      box-sizing: border-box;
-      /*padding y border dentro del width*/ }
-    .formulario form .form-buttons {
-      display: flex;
-      justify-content: center;
-      /* Centro de los botones */
-      width: fit-content;
-      max-width: 150px;
-      margin-left: auto;
-      margin-right: auto;
-      margin: 10px; }
+      align-items: center;
+      justify-content: center; }
+      .comunicate .formulario form div {
+        display: flex;
+        flex-direction: column;
+        gap: 5px;
+        width: 100%; }
+      .comunicate .formulario form label {
+        margin-bottom: 3px; }
+      .comunicate .formulario form input,
+      .comunicate .formulario form textarea {
+        padding: 5px;
+        font-size: 14px;
+        color: #464442;
+        width: 100%;
+        /*ancho de los campos*/
+        box-sizing: border-box; }
+      .comunicate .formulario form textarea {
+        height: 80px;
+        /*campo de comentarios*/ }
+      .comunicate .formulario form .form-buttons {
+        display: flex;
+        justify-content: center;
+        gap: 10px;
+        margin: 20px auto; }
 
 /*---Header Nav---*/
 @media (max-width: 768px) {
@@ -787,7 +804,43 @@ footer {
           list-style-type: circle;
           text-align: justify; } }
 
-/*-------Servicios---------*/
+/*-------------Servicios-------------*/
+@media (min-width: 1024px) {
+  .servicios {
+    display: grid;
+    grid-template-columns: 1fr 2fr;
+    /*dos columnas una imagen dos la lista*/
+    gap: 20px;
+    padding: 20px 50px; }
+    .servicios img {
+      margin: 20px auto;
+      width: 80%;
+      max-width: 600px;
+      height: auto;
+      max-height: 600px;
+      border-radius: 10px;
+      border: 2px solid #ccc;
+      box-shadow: 0 0 10px rgba(0, 0, 0, 0.6); }
+    .servicios .lista {
+      display: grid;
+      grid-template-columns: 1fr;
+      /*dos columnas en la lista*/
+      width: 100%;
+      max-width: 700px;
+      height: auto;
+      margin: 20px auto 0;
+      padding: 10px 15px; }
+      .servicios .lista h6 {
+        font-size: 24px;
+        padding: 10px;
+        margin: 10px 20px; }
+      .servicios .lista ul {
+        display: grid;
+        grid-template-columns: 1fr 1fr; }
+      .servicios .lista ul li {
+        list-style: disc;
+        text-align: justify; } }
+
 @media (max-width: 768px) {
   .servicios {
     display: flex;
@@ -795,34 +848,43 @@ footer {
     align-items: center;
     gap: 20px;
     padding: 0 10px; }
-  .servicios img,
-  .lista {
-    width: 100%;
-    max-width: 500px;
-    height: auto;
-    margin: 20px auto 0; }
-  .lista h6 {
-    font-size: 20px;
-    padding: 10px; }
-  .lista ul li {
-    font-size: 15px;
-    max-height: none;
-    display: flex;
-    flex-direction: column;
-    padding: 5px 10px; } }
+    .servicios img {
+      margin-top: 30px;
+      width: 90%;
+      max-width: 400px;
+      height: auto;
+      max-height: 500px;
+      border-radius: 10px;
+      border: 2px solid #ccc;
+      box-shadow: 0 0 10px rgba(0, 0, 0, 0.6); }
+    .servicios .lista {
+      width: 90%;
+      max-width: 250px;
+      /*ancho max de la lista*/
+      height: auto;
+      margin: 20px auto 0;
+      padding: 0 5px; }
+    .servicios .lista h6 {
+      font-size: 20px;
+      padding: 10px;
+      margin: 10px 10px; }
+    .servicios .lista ul li {
+      list-style: disc;
+      text-align: justify;
+      padding: 0; } }
 
-/*------Actividades-------*/
+/*-----------Actividades----------------*/
 @media (max-width: 940px) {
   .actividades {
     display: flex;
-    flex-direction: column;
-    align-items: center; }
+    flex-direction: column; }
     .actividades .actividades h2 {
       font-size: 18px;
       font-weight: 200;
       text-align: center;
       margin: 10px; }
       .actividades .actividades h2 .actividades h5 {
+        text-align: justify;
         font-size: 30px; }
         .actividades .actividades h2 .actividades h5 .actividades p {
           font-size: 20px; }
@@ -849,14 +911,14 @@ footer {
 @media (max-width: 620px) {
   .actividades {
     display: flex;
-    flex-direction: column;
-    align-items: center; }
+    flex-direction: column; }
     .actividades .actividades h2 {
       font-size: 18px;
       font-weight: 200;
       text-align: center;
       margin: 10px; }
       .actividades .actividades h2 .actividades h5 {
+        text-align: justify;
         font-size: 30px; }
         .actividades .actividades h2 .actividades h5 .actividades p {
           font-size: 20px; }
@@ -876,21 +938,52 @@ footer {
     max-width: 500px;
     /*ancho max cards*/ } }
 
-/*-----Contacto-------*/
-@media (max-width: 768px) {
+/*-----Page Contacto-------*/
+@media (max-width: 1024px) {
   .comunicate {
     display: flex;
     flex-direction: column;
     align-items: center;
-    gap: 20px;
-    padding: 0 10px; }
-  .comunicate img,
-  .formulario {
-    width: 100%;
-    max-width: 500px;
-    margin: 20px auto; }
-  .formulario {
-    padding: 20px 20px;
-    /*espacio borde y contenido*/ }
-  .formulario form label {
-    font-size: 18px; } }
+    gap: 40px;
+    padding: 60px 20px; }
+    .comunicate .fachada img {
+      width: 90%;
+      max-width: 500px;
+      height: auto;
+      max-height: 600px;
+      border-radius: 10px;
+      border: 2px solid #ccc;
+      box-shadow: 0 0 10px rgba(0, 0, 0, 0.6); }
+    .comunicate .formulario {
+      width: 90%;
+      max-width: 400px;
+      margin: 20px auto;
+      padding: 15px 20px; }
+      .comunicate .formulario form {
+        display: flex;
+        flex-direction: column;
+        gap: 10px;
+        width: 100%;
+        align-items: center;
+        justify-content: center; }
+        .comunicate .formulario form div {
+          display: flex;
+          flex-direction: column;
+          gap: 5px;
+          width: 100%; }
+        .comunicate .formulario form label {
+          margin-bottom: 3px; }
+        .comunicate .formulario form input,
+        .comunicate .formulario form textarea {
+          padding: 5px;
+          font-size: 14px;
+          color: #464442;
+          width: 100%;
+          box-sizing: border-box; }
+        .comunicate .formulario form textarea {
+          height: 100px; }
+          .comunicate .formulario form textarea .form-buttons {
+            display: flex;
+            justify-content: center;
+            gap: 10px;
+            margin: 20px auto; } }
