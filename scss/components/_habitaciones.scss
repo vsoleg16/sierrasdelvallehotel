@@ -41,6 +41,8 @@
 
         .comodidades {
             ul {
+                display: grid;
+                grid-template-columns: 1fr 1fr;
                 li {
                     list-style-type: circle;
                     padding: 0;

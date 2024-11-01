@@ -3,6 +3,7 @@
 @media (max-width: 768px) {
     header {
         height: auto;
+        padding: 5px 0;
 
         .container {
             .row {
@@ -11,40 +12,47 @@
                 .col-12.col-md-3 {
                     display: flex;
                     justify-content: center;
-                    margin-bottom: 5px;
+                    align-items: flex-start;
 
                     img {
-                        max-height: 90px;
+                        max-height: 100px;
                     }
                 }
 
                 .col-12.col-md-9 {
                     .navbar {
+                        display: flex;
                         justify-content: space-between;
 
                         .navbar-toggler {
-                            display: block;
+                            display: flex; 
+                            justify-content: flex-end;      
                             margin-left: auto;
                         }
 
-                        .navbar-collapse {
-                            display: none;
-                            /*oculta el menú inicialmente*/
+                        .collapse {
+                            display: none; 
 
-                            &.collapse.show {
+                            &.show {
                                 display: flex;
                                 flex-direction: column;
-                                width: 100%;
+                                align-items: center; 
+                                width: 100%; 
                                 margin-top: 10px;
 
                                 .navbar-nav {
                                     display: flex;
                                     flex-direction: column;
+                                    align-items: center; 
+                                    width: 100%; 
                                     gap: 5px;
                                     justify-content: center;
-
                                 }
                             }
+                        }
+
+                        .navbar-collapse {
+                            display: none;
                         }
                     }
                 }
@@ -53,11 +61,14 @@
     }
 }
 
+
+
+
 /*--------- Hero imagen paisaje  -----*/
 
 @media (min-width: 320px) and (max-width: 768px) {
     .hero {
-        height: 35vh;
+        height: 25vh;
         background-size: cover;
     }
 
@@ -235,7 +246,7 @@
     }
 
     .pago img {
-        width: 80px;
+        width: 50px;
     }
 }
 
@@ -341,13 +352,14 @@
                 margin-top: 10px;
 
                 ul {
+                    display: grid;
+                    grid-template-columns: 1fr 1fr;
                     padding: 0;
 
                     li {
                         flex: 1 1 45%;
                         /*ocupa el 45% del espacio (dos columnas)*/
                         list-style-type: circle;
-                        text-align: justify;
                     }
                 }
             }
@@ -389,19 +401,14 @@
                 margin-top: 10px;
 
                 ul {
-                    display: flex;
-                    flex-wrap: wrap;
-                    /* se ajusten en dos hileras*/
-                    justify-content: center;
-                    /*centra las comodidades*/
-                    gap: 10px;
+                    display: grid;
+                    grid-template-columns: 1fr 1fr;
+                    gap: 5px;
                     padding: 0;
 
                     li {
-                        flex: 1 1 45%;
-                        /*ocupa el 45% del espacio (dos columnas)*/
+                        flex: 1 1 10%;   /*ocupa el 45% del espacio (dos columnas)*/
                         list-style-type: circle;
-                        text-align: justify;
                     }
                 }
             }
@@ -415,16 +422,17 @@
 @media (min-width: 1024px) {
     .servicios {
         display: grid;
-        grid-template-columns: 1fr 2fr;  /*dos columnas una imagen dos la lista*/
+        grid-template-columns: 1fr 2fr;
+        /*dos columnas una imagen dos la lista*/
         gap: 20px;
-        padding: 20px 50px; 
+        padding: 20px 50px;
 
         img {
-            margin: 20px auto; 
-            width: 80%; 
-            max-width: 600px; 
+            margin: 20px auto;
+            width: 80%;
+            max-width: 600px;
             height: auto;
-            max-height: 600px; 
+            max-height: 600px;
             border-radius: 10px;
             border: 2px solid #ccc;
             box-shadow: 0 0 10px rgba(0, 0, 0, 0.6);
@@ -433,22 +441,23 @@
 
         .lista {
             display: grid;
-            grid-template-columns: 1fr; /*dos columnas en la lista*/
-            width: 100%; 
-            max-width: 700px; 
+            grid-template-columns: 1fr;
+            /*dos columnas en la lista*/
+            width: 100%;
+            max-width: 700px;
             height: auto;
             margin: 20px auto 0;
-            padding: 10px 15px; 
+            padding: 10px 15px;
 
             h6 {
-                font-size: 24px; 
+                font-size: 24px;
                 padding: 10px;
-                margin: 10px 20px; 
+                margin: 10px 20px;
             }
 
             ul {
                 display: grid;
-                grid-template-columns: 1fr 1fr; 
+                grid-template-columns: 1fr 1fr;
             }
 
             ul li {
@@ -606,7 +615,7 @@
 
 /*-----Page Contacto-------*/
 
-@media (max-width: 1024px) {
+@media (max-width: 900px) {
     .comunicate {
         display: flex;
         flex-direction: column;

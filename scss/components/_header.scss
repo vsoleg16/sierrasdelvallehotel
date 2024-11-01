@@ -1,5 +1,5 @@
 header {
-    height: 70px; // Altura de la barra de navegación
+    height: 70px; 
     background-color: white;
     display: flex;
     align-items: center;
@@ -31,9 +31,7 @@ header {
                     justify-content: flex-end;
 
                     .navbar-toggler {
-                        display: none;       /*ocultar en pantallas grandes*/
-                        border: none;
-                        background: transparent;
+                        display: none;   
                     }
 
                     .navbar-collapse {
@@ -46,7 +44,7 @@ header {
 
                             .nav-item {
                                 .nav-link {
-                                    @include quinta-fuente; // Aplica la quinta fuente aquí
+                                    @include quinta-fuente; 
 
                                     &:hover {
                                         color: $button-hover-color;

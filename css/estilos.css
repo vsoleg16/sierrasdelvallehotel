@@ -50,10 +50,7 @@ header {
         align-items: center;
         justify-content: flex-end; }
         header .container .row .col-12.col-md-9 .navbar .navbar-toggler {
-          display: none;
-          /*ocultar en pantallas grandes*/
-          border: none;
-          background: transparent; }
+          display: none; }
         header .container .row .col-12.col-md-9 .navbar .navbar-collapse {
           display: flex;
           justify-content: flex-end; }
@@ -67,7 +64,7 @@ header {
                 color: sandybrown; }
 
 .hero {
-  height: 40vh;
+  height: 35vh;
   background-image: url(../img/Fondo-Header.jpg);
   background-size: cover;
   background-position: center;
@@ -243,9 +240,9 @@ header {
   .pago div {
     text-align: center;
     flex: 1 1 150px;
-    min-width: 120px; }
+    min-width: 100px; }
     .pago div img {
-      width: 100px;
+      width: 70px;
       height: auto; }
       .pago div img p {
         margin-top: 10px;
@@ -323,13 +320,16 @@ footer {
       font-size: 14px;
       color: #464442;
       margin-top: 10px; }
-  .habitaciones-pagina .habitacion .comodidades ul li {
-    list-style-type: circle;
-    padding: 0;
-    margin-left: 40px;
-    text-align: justify;
-    font-size: 14px;
-    color: #464442; }
+  .habitaciones-pagina .habitacion .comodidades ul {
+    display: grid;
+    grid-template-columns: 1fr 1fr; }
+    .habitaciones-pagina .habitacion .comodidades ul li {
+      list-style-type: circle;
+      padding: 0;
+      margin-left: 40px;
+      text-align: justify;
+      font-size: 14px;
+      color: #464442; }
 
 .servicios {
   display: grid;
@@ -531,38 +531,45 @@ footer {
 /*---Header Nav---*/
 @media (max-width: 768px) {
   header {
-    height: auto; }
+    height: auto;
+    padding: 5px 0; }
     header .container .row {
       flex-direction: column; }
       header .container .row .col-12.col-md-3 {
         display: flex;
         justify-content: center;
-        margin-bottom: 5px; }
+        align-items: flex-start; }
         header .container .row .col-12.col-md-3 img {
-          max-height: 90px; }
+          max-height: 100px; }
       header .container .row .col-12.col-md-9 .navbar {
+        display: flex;
         justify-content: space-between; }
         header .container .row .col-12.col-md-9 .navbar .navbar-toggler {
-          display: block;
+          display: flex;
+          justify-content: flex-end;
           margin-left: auto; }
-        header .container .row .col-12.col-md-9 .navbar .navbar-collapse {
-          display: none;
-          /*oculta el menú inicialmente*/ }
-          header .container .row .col-12.col-md-9 .navbar .navbar-collapse.collapse.show {
+        header .container .row .col-12.col-md-9 .navbar .collapse {
+          display: none; }
+          header .container .row .col-12.col-md-9 .navbar .collapse.show {
             display: flex;
             flex-direction: column;
+            align-items: center;
             width: 100%;
             margin-top: 10px; }
-            header .container .row .col-12.col-md-9 .navbar .navbar-collapse.collapse.show .navbar-nav {
+            header .container .row .col-12.col-md-9 .navbar .collapse.show .navbar-nav {
               display: flex;
               flex-direction: column;
+              align-items: center;
+              width: 100%;
               gap: 5px;
-              justify-content: center; } }
+              justify-content: center; }
+        header .container .row .col-12.col-md-9 .navbar .navbar-collapse {
+          display: none; } }
 
 /*--------- Hero imagen paisaje  -----*/
 @media (min-width: 320px) and (max-width: 768px) {
   .hero {
-    height: 35vh;
+    height: 25vh;
     background-size: cover; }
   .hero h1 {
     font-size: 18px; } }
@@ -684,7 +691,7 @@ footer {
     grid-template-columns: 1fr;
     gap: 5%; }
   .pago img {
-    width: 80px; } }
+    width: 50px; } }
 
 /*---------------Footer-------------------*/
 @media (min-width: 560px) and (max-width: 1200px) {
@@ -763,12 +770,13 @@ footer {
       gap: 10px;
       margin-top: 10px; }
       .habitaciones-pagina .habitacion .comodidades ul {
+        display: grid;
+        grid-template-columns: 1fr 1fr;
         padding: 0; }
         .habitaciones-pagina .habitacion .comodidades ul li {
           flex: 1 1 45%;
           /*ocupa el 45% del espacio (dos columnas)*/
-          list-style-type: circle;
-          text-align: justify; } }
+          list-style-type: circle; } }
 
 @media (min-width: 320px) and (max-width: 768px) {
   .habitaciones-pagina .habitacion {
@@ -791,18 +799,14 @@ footer {
     .habitaciones-pagina .habitacion .comodidades {
       margin-top: 10px; }
       .habitaciones-pagina .habitacion .comodidades ul {
-        display: flex;
-        flex-wrap: wrap;
-        /* se ajusten en dos hileras*/
-        justify-content: center;
-        /*centra las comodidades*/
-        gap: 10px;
+        display: grid;
+        grid-template-columns: 1fr 1fr;
+        gap: 5px;
         padding: 0; }
         .habitaciones-pagina .habitacion .comodidades ul li {
-          flex: 1 1 45%;
+          flex: 1 1 10%;
           /*ocupa el 45% del espacio (dos columnas)*/
-          list-style-type: circle;
-          text-align: justify; } }
+          list-style-type: circle; } }
 
 /*-------------Servicios-------------*/
 @media (min-width: 1024px) {
@@ -939,7 +943,7 @@ footer {
     /*ancho max cards*/ } }
 
 /*-----Page Contacto-------*/
-@media (max-width: 1024px) {
+@media (max-width: 900px) {
   .comunicate {
     display: flex;
     flex-direction: column;
