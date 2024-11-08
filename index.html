@@ -12,7 +12,7 @@
     <meta name="description"
         content="Vive la calidez y confort de nuestro hotel familiar en las sierras cordobesas. Aire puro y entorno acogedor. Reserva hoy y experimenta la naturaleza en su máxima expresión.">
     <meta name="keywords"
-        content="cordoba, sierras de cordoba, valle hermoso, hotel, hosteria, sierras del valle, sierras del valle hotel, vacaciones, verano, rios en cordoba, fin de semana, fin de largo, la falda, cosquin, festival, cosquin rock">
+        content="córdoba, sierras de córdoba, valle hermoso, hotel, hosteria,sierras del valle, sierras del valle hotel, hoteles con pileta en Valle Hermoso, vacaciones, verano, rios en cordoba, fin de semana, finde largo, alojamiento familiar en Córdoba para Semana Santa, hoteles económicos en Sierras de Córdoba,  la falda, cosquin, festival,festival de cosquin, cabañas cerca de Cosquín Rock, festival del folclore, avicultura, carrera del rio pinto, rally mundial, cosquin rock, ¿Qué hacer en Valle Hermoso?, ¿Dónde alojarse cerca del Festival de Cosquín?, ¿Cuál es la mejor época para visitar Córdoba?">
     <title>Sierras del Valle Hotel</title>
     <link rel="shortcut icon" href="./img/favicon.ico" type="image/x-icon">
 </head>
@@ -22,7 +22,9 @@
         <div class="container">
             <div class="row align-items-center py-3">
                 <div class="col-12 col-md-3 text-center text-md-left">
-                    <img src="./img/logo_hotel.png" alt="logo hotel" class="img-fluid">
+                    <a href="./index.html">
+                        <img src="./img/logo_hotel.png" alt="logo hotel" class="img-fluid">
+                    </a>
                 </div>
                 <div class="col-12 col-md-9">
                     <nav class="navbar navbar-expand-md navbar-light p-0">
@@ -53,7 +55,7 @@
             <h1 class="animate__animated animate__slideInLeft">Un espacio de libertad, tranquilidad y desconexión</h1>
         </section>
         <section class="descripcion">
-            <div> 
+            <div>
                 <img src="./img/frentehotel.png" alt="fachada">
             </div>
             <div>
@@ -63,9 +65,9 @@
                     al máximo.
                     Ya sean unas vacaciones, o solo una escapada de fin de semana, nuestra ubicación preferencial le
                     permitirá conocer todos los atractivos de la zona.
-                    Somos un negocio familiar, que actualmente es conducido por la segunda generación, estamos tratando
-                    de renovarnos para brindar cada día un mejor servicio a nuestros clientes.
-                    Los esperamos para atenderlos con el cariño, calidez y el esmero de siempre.</p>
+                    Somos una familia que, actualmente en su segunda generación, se dedica con pasión a la gestión del
+                    hotel. Nos estamos renovando constantemente para ofrecer un mejor servicio cada día.</p>
+                <p>¡Los esperamos para atenderlos con el mismo cariño, calidez y esmero de siempre!</p>
             </div>
         </section>
         <section class="habitaciones">
@@ -144,14 +146,19 @@
                 <div class="carousel-inner">
                     <div class="carousel-item active">
                         <div class="d-flex justify-content-start">
-                            <img src="./img/comedor.png" class="d-block" alt="Imagen 1">
-                            <img src="./img/desayuno.png" class="d-block" alt="Imagen 2">
-                            <img src="./img/parque-estacionmiento.png" class="d-block" alt="Imagen 3">
-                            <img src="./img/parque.png" class="d-block" alt="Imagen 4">
-                            <img src="./img/pileta.png" class="d-block" alt="Imagen 5">
-                            <img src="./img/parque2.png" class="d-block" alt="Imagen 6">
-                            <img src="./img/pileta1.png" class="d-block" alt="Imagen 7">
-                            <img src="./img/comedor.png" class="d-block" alt="Imagen 8">
+                            <img src="./img/comedor.png" class="d-block" alt="comedor">
+                            <img src="./img/desayuno.png" class="d-block" alt="desayuno">
+                            <img src="./img/parque-estacionmiento.png" class="d-block" alt="parque estacionamiento">
+                            <img src="./img/parque.png" class="d-block" alt="parque">
+                            <img src="./img/pileta.png" class="d-block" alt="pileta">
+                            <img src="./img/parque2.png" class="d-block" alt="parque 2">
+                            <img src="./img/pileta1.png" class="d-block" alt="pileta 1">
+                            <img src="./img/comedor.png" class="d-block" alt="comedor">
+                            <img src="./img/pileta.png" class="d-block" alt="pileta">
+                            <img src="./img/desayuno.png" class="d-block" alt="desayuno">
+                            <img src="./img/habitacion-1-ventana.png" class="d-block" alt="habitacion 1">
+                            <img src="./img/parque2.png" class="d-block" alt="parque 2">
+                            <img src="./img/habitacion-2-matrimonialbaño.png" class="d-block" alt="habitacion 2">
                         </div>
                     </div>
                 </div>
@@ -170,11 +177,11 @@
                     const prevButton = document.querySelector('.carousel-control-prev');
                     const nextButton = document.querySelector('.carousel-control-next');
                     const totalImages = document.querySelectorAll('.carousel-item img').length;
-                    const imgWidth = document.querySelector('.carousel-item img').offsetWidth + 20; // Ancho de imagen más margen
+                    const imgWidth = document.querySelector('.carousel-item img').offsetWidth + 20;
                     let currentPosition = 0;
 
-                    // Función para desplazar las imágenes con transform
                     function moveCarousel(position) {
+                        carouselInner.style.transition = 'transform 0.3s ease-in-out';
                         carouselInner.style.transform = `translateX(-${position}px)`;
                     }
 
@@ -182,7 +189,7 @@
                         if (currentPosition > 0) {
                             currentPosition -= imgWidth;
                         } else {
-                            currentPosition = (totalImages - 1) * imgWidth; // Vuelve al final
+                            currentPosition = (totalImages - 1) * imgWidth;
                         }
                         moveCarousel(currentPosition);
                     });
@@ -227,7 +234,7 @@
             </div>
         </section>
     </main>
-    <footer><!--footer id=pie de pagina-->
+    <footer>
         <div class="icono">
             <img src="./img/logo-hotel-footer.png" alt="icono hotel">
         </div>

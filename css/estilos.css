@@ -1,8 +1,8 @@
 @charset "UTF-8";
-/*--listas--*/
 /*mixins*/
-/*---- Imagenes carrusel ---*/
 /*------botoncito cards -----*/
+/*---- Imagenes carrusel ---*/
+/*------loguito whats------*/
 /*----------------extends-------------- */
 @import url("https://fonts.googleapis.com/css2?family=Figtree:ital,wght@0,300..900;1,300..900&display=swap");
 .hero {
@@ -56,7 +56,8 @@ header {
           justify-content: flex-end; }
           header .container .row .col-12.col-md-9 .navbar .navbar-collapse .navbar-nav {
             display: flex;
-            gap: 10px; }
+            align-items: center;
+            gap: 5px; }
             header .container .row .col-12.col-md-9 .navbar .navbar-collapse .navbar-nav .nav-item .nav-link {
               font-size: 20px;
               color: #464442; }
@@ -103,8 +104,8 @@ header {
     margin-bottom: 20px; }
   .descripcion p {
     font-size: 15px;
-    text-align: center;
     color: #464442;
+    text-align: center;
     display: flex;
     justify-content: center;
     margin-top: 20px;
@@ -153,7 +154,7 @@ header {
         margin: 10px 0;
         text-align: center; }
       .habitaciones .tarjetitas div p {
-        font-size: 14px;
+        font-size: 15px;
         color: #464442;
         text-align: center;
         margin: 10px 0;
@@ -165,16 +166,17 @@ header {
       .habitaciones .tarjetitas div a {
         background-color: #e6ccb6;
         color: #fff;
+        font-size: 18px;
         border-radius: 5px;
         cursor: pointer;
-        padding: 5px;
+        padding: 11px;
         text-align: center;
         text-decoration: none;
         transition: background-color 0.3s ease;
         width: fit-content;
         /*se ajusta al contenido*/
         max-width: 150px;
-        /*limite ancho máximo del botón*/
+        /*limite ancho max del botón*/
         margin-left: auto;
         margin-right: auto;
         margin-bottom: 10px; }
@@ -195,21 +197,26 @@ header {
   padding: 20px; }
 
 .galeria #imageCarousel.carousel .carousel-inner {
-  overflow: hidden;
+  overflow: hidden !important;
   scroll-snap-type: x mandatory;
   padding-bottom: 15px;
-  transition: transform 0.5s ease-in-out; }
+  transition: transform 0.3s ease-in-out !important; }
   .galeria #imageCarousel.carousel .carousel-inner ::-webkit-scrollbar {
     display: none; }
-  .galeria #imageCarousel.carousel .carousel-inner .carousel-item.active .d-flex.justify-content-start img {
-    flex: 0 0 auto;
-    width: auto;
-    max-width: 250px;
-    height: auto;
-    object-fit: cover;
-    margin: 0 10px;
-    border-radius: 10px;
-    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2); }
+  .galeria #imageCarousel.carousel .carousel-inner .carousel-item {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    width: auto !important; }
+    .galeria #imageCarousel.carousel .carousel-inner .carousel-item.active .d-flex.justify-content-start img {
+      flex: 0 0 100%;
+      max-width: 250px;
+      height: auto;
+      object-fit: cover;
+      margin: 0 10px;
+      border-radius: 10px;
+      box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
+      width: auto !important; }
 
 .galeria #imageCarousel.carousel .carousel-control-prev,
 .galeria #imageCarousel.carousel .carousel-control-next {
@@ -246,7 +253,7 @@ header {
       height: auto; }
       .pago div img p {
         margin-top: 10px;
-        font-size: 14px;
+        font-size: 15px;
         color: #464442; }
 
 footer {
@@ -265,7 +272,7 @@ footer {
       max-height: 150px;
       margin: 0 auto; }
   footer .contacto p {
-    font-size: 14px;
+    font-size: 15px;
     color: #464442;
     text-align: center;
     margin: 0;
@@ -317,7 +324,7 @@ footer {
       text-align: center;
       margin-bottom: 10px; }
     .habitaciones-pagina .habitacion .informacion p {
-      font-size: 14px;
+      font-size: 15px;
       color: #464442;
       margin-top: 10px; }
   .habitaciones-pagina .habitacion .comodidades ul {
@@ -328,7 +335,7 @@ footer {
       padding: 0;
       margin-left: 40px;
       text-align: justify;
-      font-size: 14px;
+      font-size: 15px;
       color: #464442; }
 
 .servicios {
@@ -366,7 +373,7 @@ footer {
       text-align: center;
       margin-bottom: 25px; }
     .servicios .lista ul li {
-      font-size: 14px;
+      font-size: 15px;
       color: #464442;
       list-style: disc;
       text-align: justify;
@@ -381,7 +388,7 @@ footer {
   .actividades h2 {
     font-size: 40px;
     color: #deb780;
-    font-weight: 500;
+    font-weight: 400;
     text-align: center;
     margin: 20px; }
     .actividades h2 h5 {
@@ -390,7 +397,7 @@ footer {
       text-align: justify;
       padding-top: 10px; }
       .actividades h2 h5 p {
-        font-size: 14px;
+        font-size: 15px;
         color: #464442;
         align-self: flex-start;
         margin: 10px 0;
@@ -428,7 +435,9 @@ footer {
     align-items: center;
     text-align: center;
     padding: 5px;
+    /*espacio interno*/
     height: 100%;
+    /*card ocupa toda altura disponible*/
     min-height: 300px; }
     .turismo .card:hover {
       transform: translateY(-10px); }
@@ -446,7 +455,7 @@ footer {
         font-size: 14px;
         margin-bottom: auto; }
       .turismo .card .card-body a {
-        padding: 3px 10px;
+        padding: 10px 9px;
         background-color: #e6ccb6;
         color: #fff;
         text-decoration: none;
@@ -514,7 +523,7 @@ footer {
       .comunicate .formulario form input,
       .comunicate .formulario form textarea {
         padding: 5px;
-        font-size: 14px;
+        font-size: 15px;
         color: #464442;
         width: 100%;
         /*ancho de los campos*/
@@ -531,16 +540,20 @@ footer {
 /*---Header Nav---*/
 @media (max-width: 768px) {
   header {
-    height: auto;
-    padding: 5px 0; }
+    height: auto !important;
+    padding: 3px 0 !important; }
     header .container .row {
-      flex-direction: column; }
+      display: flex;
+      flex-direction: column;
+      padding: 0 !important; }
       header .container .row .col-12.col-md-3 {
         display: flex;
         justify-content: center;
         align-items: flex-start; }
         header .container .row .col-12.col-md-3 img {
-          max-height: 100px; }
+          max-height: 100px !important;
+          margin: 0 !important;
+          padding: 0 !important; }
       header .container .row .col-12.col-md-9 .navbar {
         display: flex;
         justify-content: space-between; }
@@ -548,23 +561,22 @@ footer {
           display: flex;
           justify-content: flex-end;
           margin-left: auto; }
-        header .container .row .col-12.col-md-9 .navbar .collapse {
+        header .container .row .col-12.col-md-9 .navbar .navbar-collapse {
           display: none; }
-          header .container .row .col-12.col-md-9 .navbar .collapse.show {
+          header .container .row .col-12.col-md-9 .navbar .navbar-collapse.show {
             display: flex;
             flex-direction: column;
             align-items: center;
             width: 100%;
-            margin-top: 10px; }
-            header .container .row .col-12.col-md-9 .navbar .collapse.show .navbar-nav {
+            margin: 0 !important;
+            transition: none; }
+            header .container .row .col-12.col-md-9 .navbar .navbar-collapse.show .navbar-nav {
               display: flex;
               flex-direction: column;
               align-items: center;
               width: 100%;
-              gap: 5px;
-              justify-content: center; }
-        header .container .row .col-12.col-md-9 .navbar .navbar-collapse {
-          display: none; } }
+              gap: 0;
+              justify-content: center; } }
 
 /*--------- Hero imagen paisaje  -----*/
 @media (min-width: 320px) and (max-width: 768px) {
@@ -629,7 +641,6 @@ footer {
     margin: 10px;
     padding: 10px; }
   .habitaciones h3 {
-    font-size: 26px;
     text-align: center; }
   .habitaciones .tarjetitas {
     display: grid;
@@ -643,7 +654,7 @@ footer {
     height: auto;
     margin: 10px; }
   .habitaciones h3 {
-    font-size: 24px;
+    font-size: 25px;
     text-align: center; }
   .habitaciones .tarjetitas {
     display: grid;
@@ -656,7 +667,7 @@ footer {
     height: auto;
     padding: 10px; }
   .habitaciones h3 {
-    font-size: 20px; }
+    font-size: 25px; }
   .habitaciones .tarjetitas {
     display: grid;
     grid-template-columns: 1fr;
@@ -675,14 +686,14 @@ footer {
 
 @media (min-width: 320px) and (max-width: 480px) {
   .galeria h3 {
-    font-size: 20px;
+    font-size: 25px;
     padding: 10px;
     text-align: center; } }
 
 /*----------Forma de pago Index----------*/
 @media (max-width: 480px) {
   .forma h3 {
-    font-size: 18px;
+    font-size: 25px;
     position: relative;
     display: flex;
     flex-direction: column; }
@@ -743,7 +754,7 @@ footer {
       grid-column: 1 / 2;
       /*primera columna - imagen*/
       grid-row: 1;
-      /*fila1*/
+      /*fila 1*/
       width: 100%;
       height: auto;
       margin-bottom: 10px; }
@@ -751,7 +762,7 @@ footer {
       grid-column: 2 / 3;
       /*segunda columna - informacion*/
       grid-row: 1;
-      /*fila2*/
+      /*fila 2*/
       text-align: center;
       padding: 10px; }
       .habitaciones-pagina .habitacion .informacion h5 {
@@ -883,15 +894,15 @@ footer {
     display: flex;
     flex-direction: column; }
     .actividades .actividades h2 {
-      font-size: 18px;
-      font-weight: 200;
+      font-size: 30px;
+      font-weight: 150;
       text-align: center;
       margin: 10px; }
       .actividades .actividades h2 .actividades h5 {
         text-align: justify;
-        font-size: 30px; }
+        font-size: 22px; }
         .actividades .actividades h2 .actividades h5 .actividades p {
-          font-size: 20px; }
+          font-size: 18px; }
   .turismo .cards-container {
     display: grid;
     grid-template-columns: repeat(2, 1fr);
@@ -917,15 +928,17 @@ footer {
     display: flex;
     flex-direction: column; }
     .actividades .actividades h2 {
-      font-size: 18px;
-      font-weight: 200;
+      font-size: 25px;
+      font-weight: 100;
       text-align: center;
       margin: 10px; }
       .actividades .actividades h2 .actividades h5 {
         text-align: justify;
-        font-size: 30px; }
+        font-size: 20px; }
         .actividades .actividades h2 .actividades h5 .actividades p {
-          font-size: 20px; }
+          font-size: 18px; }
+  .turismo h3 {
+    font-size: 25px; }
   .turismo .cards-container {
     display: flex;
     flex-direction: column;
@@ -980,7 +993,7 @@ footer {
         .comunicate .formulario form input,
         .comunicate .formulario form textarea {
           padding: 5px;
-          font-size: 14px;
+          font-size: 15px;
           color: #464442;
           width: 100%;
           box-sizing: border-box; }

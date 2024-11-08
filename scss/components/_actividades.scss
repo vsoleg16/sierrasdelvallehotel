@@ -7,7 +7,7 @@
 
     h2 {
         @include segunda-fuente;
-        font-weight: 500;
+        font-weight: 400;
         text-align: center;
         margin: 20px;
 
@@ -61,8 +61,8 @@
         justify-content: space-between;
         align-items: center;
         text-align: center;
-        padding: 5px; // espacio interno
-        height: 100%; // tarjeta ocupa toda la altura disponible
+        padding: 5px;           /*espacio interno*/
+        height: 100%;           /*card ocupa toda altura disponible*/
         min-height: 300px;
 
         &:hover {
@@ -88,7 +88,7 @@
             }
 
             a {
-                padding: 3px 10px;
+                padding: 10px 9px;
                 background-color: $button-background-color;
                 color: $text-color-button;
                 text-decoration: none;

@@ -44,9 +44,8 @@
     }
 
     p {
-        font-size: 15px;
+        @include parrafos-varios;
         text-align: center;
-        color: rgb(70, 68, 66);
         display: flex;
         justify-content: center;
         margin-top: 20px;
@@ -77,7 +76,8 @@
 
         div {
             @include tarjetita-style;
-            padding: 10px;   /*margen interno*/
+            padding: 10px;
+            /*margen interno*/
             text-align: center;
 
             img {
@@ -131,21 +131,28 @@
         &.carousel {
             .carousel-inner {
                 @extend %flex-container;
-                overflow: hidden;
+                overflow: hidden !important;
                 scroll-snap-type: x mandatory;
                 padding-bottom: 15px;
-                transition: transform 0.5s ease-in-out;
+                transition: transform 0.3s ease-in-out !important;
 
                 ::-webkit-scrollbar {
                     display: none;
                 }
 
                 .carousel-item {
+                    display: flex;
+                    justify-content: center;
+                    align-items: center;
+                    width: auto !important;
+
                     &.active {
                         .d-flex {
+
                             &.justify-content-start {
                                 img {
                                     @include carousel-item-style;
+                                    width: auto !important;
                                 }
                             }
                         }
@@ -180,6 +187,7 @@
         margin-bottom: 40px;
     }
 }
+
 .pago {
     display: flex;
     flex-wrap: wrap;

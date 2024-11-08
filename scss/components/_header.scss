@@ -40,11 +40,12 @@ header {
 
                         .navbar-nav {
                             display: flex;
-                            gap: 10px;
+                            align-items: center;
+                            gap: 5px;
 
                             .nav-item {
                                 .nav-link {
-                                    @include quinta-fuente; 
+                                    @include quinta-fuente;
 
                                     &:hover {
                                         color: $button-hover-color;
