@@ -581,7 +581,7 @@ footer {
 /*--------- Hero imagen paisaje  -----*/
 @media (min-width: 320px) and (max-width: 768px) {
   .hero {
-    height: 25vh;
+    height: 24vh;
     background-size: cover; }
   .hero h1 {
     font-size: 21px; } }
