@@ -177,40 +177,97 @@
                     const prevButton = document.querySelector('.carousel-control-prev');
                     const nextButton = document.querySelector('.carousel-control-next');
                     const totalImages = document.querySelectorAll('.carousel-item img').length;
-                    const imgWidth = document.querySelector('.carousel-item img').offsetWidth + 20;
+                    const imgWidth = document.querySelector('.carousel-item img').offsetWidth + 20; // Considera márgenes
                     let currentPosition = 0;
+                    let currentIndex = 0;
+                    const slideDuration = 3000; // Duración del desplazamiento automático en milisegundos
+
+                    function cloneSlides() {
+                        for (let i = 0; i < totalImages; i++) {
+                            const clone = carouselInner.children[i].cloneNode(true);
+                            carouselInner.appendChild(clone);
+                        }
+                    }
 
                     function moveCarousel(position) {
                         carouselInner.style.transition = 'transform 0.3s ease-in-out';
                         carouselInner.style.transform = `translateX(-${position}px)`;
                     }
 
-                    prevButton.addEventListener('click', () => {
-                        if (currentPosition > 0) {
-                            currentPosition -= imgWidth;
-                        } else {
-                            currentPosition = (totalImages - 1) * imgWidth;
+                    function resetCarousel() {
+                        carouselInner.style.transition = 'none';
+                        currentPosition = 0;
+                        currentIndex = 0;
+                        carouselInner.style.transform = `translateX(0)`;
+                        setTimeout(() => {
+                            carouselInner.style.transition = 'transform 0.3s ease-in-out';
+                        }, 50);
+                    }
+
+                    function moveSlide(step) {
+                        currentIndex += step;
+                        currentPosition = currentIndex * imgWidth;
+
+                        if (currentIndex >= totalImages) {
+                            setTimeout(() => {
+                                carouselInner.style.transition = 'none';
+                                currentIndex = 0;
+                                currentPosition = 0;
+                                carouselInner.style.transform = `translateX(0)`;
+                                setTimeout(() => {
+                                    carouselInner.style.transition = 'transform 0.3s ease-in-out';
+                                }, 50);
+                            }, 300);
+                        } else if (currentIndex < 0) {
+                            setTimeout(() => {
+                                carouselInner.style.transition = 'none';
+                                currentIndex = totalImages - 1;
+                                currentPosition = currentIndex * imgWidth;
+                                carouselInner.style.transform = `translateX(-${currentPosition}px)`;
+                                setTimeout(() => {
+                                    carouselInner.style.transition = 'transform 0.3s ease-in-out';
+                                }, 50);
+                            }, 300);
                         }
+
                         moveCarousel(currentPosition);
+                    }
+
+                    function autoSlide() {
+                        moveSlide(1);
+                        setTimeout(autoSlide, slideDuration);
+                    }
+
+                    cloneSlides();
+                    autoSlide();
+
+                    prevButton.addEventListener('click', () => {
+                        moveSlide(-1);
                     });
 
                     nextButton.addEventListener('click', () => {
-                        if (currentPosition < (totalImages - 1) * imgWidth) {
-                            currentPosition += imgWidth;
-                        } else {
-                            currentPosition = 0;
-                        }
-                        moveCarousel(currentPosition);
+                        moveSlide(1);
                     });
 
-                    setInterval(() => {
-                        if (currentPosition < (totalImages - 1) * imgWidth) {
-                            currentPosition += imgWidth;
-                        } else {
-                            currentPosition = 0;
+                    let startX;
+                    let currentX;
+
+                    carouselInner.addEventListener('touchstart', (e) => {
+                        startX = e.touches[0].pageX;
+                    });
+
+                    carouselInner.addEventListener('touchmove', (e) => {
+                        currentX = e.touches[0].pageX;
+                    });
+
+                    carouselInner.addEventListener('touchend', () => {
+                        const threshold = 50; // Distancia mínima en píxeles para considerar un deslizamiento
+                        if (startX - currentX > threshold) {
+                            moveSlide(1); // Desliza hacia la izquierda
+                        } else if (currentX - startX > threshold) {
+                            moveSlide(-1); // Desliza hacia la derecha
                         }
-                        moveCarousel(currentPosition);
-                    }, 3000);
+                    });
                 });
             </script>
         </section>
